@@ -8,12 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var login: String = ""
+    @State private var password: String = ""
+    @State private var showAlert: Bool = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            Form {
+                Section {
+                    TextField("Логин", text: $login)
+                        .autocapitalization(.none)
+                        .disableAutocorrection(true)
+                    SecureField("Пароль", text: $password)
+                }
+                Section {
+                    Button("Войти") {
+                        showAlert = true
+                    }
+                    .alert(isPresented: $showAlert) {
+                        Alert(title: Text("Вы ввели \(login)"))
+                    }
+                }
+            }
+            .navigationBarTitle("Форма входа")
         }
         .padding()
     }
