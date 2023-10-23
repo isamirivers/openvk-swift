@@ -14,7 +14,7 @@ struct ContentView: View {
     @State private var showAlert: Bool = false
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Form {
                 Section {
                     TextField("Логин", text: $login)
@@ -33,7 +33,6 @@ struct ContentView: View {
             }
             .navigationBarTitle("Форма входа")
         }
-        .padding()
     }
 }
 
