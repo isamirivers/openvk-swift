@@ -11,14 +11,22 @@
 		2A18C95E2AE6BFE6005A3F7C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18C95D2AE6BFE6005A3F7C /* ContentView.swift */; };
 		2A18C9602AE6BFE6005A3F7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A18C95F2AE6BFE6005A3F7C /* Assets.xcassets */; };
 		2A18C9632AE6BFE6005A3F7C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A18C9622AE6BFE6005A3F7C /* Preview Assets.xcassets */; };
+		2A6FE3372AE7A32100F1D694 /* LogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FE3362AE7A32100F1D694 /* LogIn.swift */; };
+		2A6FE33A2AE7B47D00F1D694 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FE3392AE7B47D00F1D694 /* WebView.swift */; };
+		2A6FE33C2AE7BA4700F1D694 /* JSONthings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FE33B2AE7BA4700F1D694 /* JSONthings.swift */; };
+		2AECF5C62AE7D30800A463A3 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AECF5C52AE7D30800A463A3 /* Keychain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2A18C9582AE6BFE6005A3F7C /* ovk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ovk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A18C95B2AE6BFE6005A3F7C /* ovkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ovkApp.swift; sourceTree = "<group>"; };
-		2A18C95D2AE6BFE6005A3F7C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2A18C95D2AE6BFE6005A3F7C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		2A18C95F2AE6BFE6005A3F7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A18C9622AE6BFE6005A3F7C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2A6FE3362AE7A32100F1D694 /* LogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIn.swift; sourceTree = "<group>"; };
+		2A6FE3392AE7B47D00F1D694 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		2A6FE33B2AE7BA4700F1D694 /* JSONthings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONthings.swift; sourceTree = "<group>"; };
+		2AECF5C52AE7D30800A463A3 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +59,8 @@
 		2A18C95A2AE6BFE6005A3F7C /* ovk */ = {
 			isa = PBXGroup;
 			children = (
+				2A6FE3382AE7B47100F1D694 /* Views */,
+				2A6FE3352AE7A30D00F1D694 /* Functions */,
 				2A18C95B2AE6BFE6005A3F7C /* ovkApp.swift */,
 				2A18C95D2AE6BFE6005A3F7C /* ContentView.swift */,
 				2A18C95F2AE6BFE6005A3F7C /* Assets.xcassets */,
@@ -65,6 +75,24 @@
 				2A18C9622AE6BFE6005A3F7C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2A6FE3352AE7A30D00F1D694 /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				2A6FE3362AE7A32100F1D694 /* LogIn.swift */,
+				2A6FE33B2AE7BA4700F1D694 /* JSONthings.swift */,
+				2AECF5C52AE7D30800A463A3 /* Keychain.swift */,
+			);
+			path = Functions;
+			sourceTree = "<group>";
+		};
+		2A6FE3382AE7B47100F1D694 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2A6FE3392AE7B47D00F1D694 /* WebView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +166,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A18C95E2AE6BFE6005A3F7C /* ContentView.swift in Sources */,
+				2A6FE33C2AE7BA4700F1D694 /* JSONthings.swift in Sources */,
+				2A6FE33A2AE7B47D00F1D694 /* WebView.swift in Sources */,
+				2A6FE3372AE7A32100F1D694 /* LogIn.swift in Sources */,
 				2A18C95C2AE6BFE6005A3F7C /* ovkApp.swift in Sources */,
+				2AECF5C62AE7D30800A463A3 /* Keychain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
