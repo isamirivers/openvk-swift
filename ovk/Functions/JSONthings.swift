@@ -7,7 +7,7 @@
 
 import Foundation
 
-func JSONtoDict(from jsonString: String) -> [String: Any]? {
+func JSONtoDict(from jsonString: String) throws -> [String: Any]? {
     if let jsonData = jsonString.data(using: .utf8) {
         do {
             let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: [])
@@ -15,7 +15,7 @@ func JSONtoDict(from jsonString: String) -> [String: Any]? {
                 return jsonDict
             }
         } catch {
-            print("Error: \(error)")
+            throw JSONtoDictError(error.localizedDescription)
         }
     }
     return nil
@@ -27,7 +27,6 @@ func DictToString(from dictionary: [String: Any]) -> String? {
         let jsonString = String(data: jsonData, encoding: .utf8)
         return jsonString
     } catch {
-        print("Error: \(error)")
+        return error.localizedDescription
     }
-    return nil
 }

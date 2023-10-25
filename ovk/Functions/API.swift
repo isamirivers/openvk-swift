@@ -1,19 +1,23 @@
 //
-//  LogIn.swift
+//  API.swift
 //  ovk
 //
-//  Created by Isami Riša on 24.10.2023.
+//  Created by Isami Riša on 25.10.2023.
 //
 
 import Foundation
 
-func LogIn(login: String, password: String, instance: String, completion: @escaping ([String: Any]?) -> Void) {
+func convertToQueryString(_ parameters: [String: String]) -> String {
+    return parameters.map { "\($0.key)=\($0.value)" }.joined(separator: "&")
+}
+
+func CallAPI(function: String, params: [String: String]=[:], completion: @escaping ([String: Any]?) -> Void) {
     
-    let escaped_login = login.addingPercentEncoding(withAllowedCharacters: .alphanumerics) ?? ""
-    let escaped_password = password.addingPercentEncoding(withAllowedCharacters: .alphanumerics) ?? ""
+    let instance = getValueFromUserDefaults(forKey: "instance") ?? "https://openvk.su"
+    let token = getValueFromKeychain(forKey: "token") ?? ""
     
     // Создаем URL для GET-запроса
-    if let url = URL(string: "\(instance)/token?username=\(escaped_login)&password=\(escaped_password)&grant_type=password&client_name=openvk-swift") {
+    if let url = URL(string: "\(instance)/method/\(function)?access_token=\(token)&\(convertToQueryString(params))") {
         // Создаем URLSession
         let session = URLSession.shared
         
@@ -30,7 +34,7 @@ func LogIn(login: String, password: String, instance: String, completion: @escap
                 }
                 catch let error {
                     if error.localizedDescription == "The data couldn’t be read because it isn’t in the correct format." {
-                        completion(["error_msg": "Не удалось прочитать JSON. Вы уверены что ввели верный адрес инстанса OpenVK?"])
+                        completion(["error_msg": "Не удалось прочитать JSON."])
                     }
                     else {
                         completion(["error_msg": error.localizedDescription])
