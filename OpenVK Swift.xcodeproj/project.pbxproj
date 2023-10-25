@@ -25,10 +25,12 @@
 		2A95C5682AE909E20042F64C /* LoginSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A95C5672AE909E20042F64C /* LoginSettings.swift */; };
 		2A95C56A2AE9115B0042F64C /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2A95C5692AE9115B0042F64C /* Localizable.xcstrings */; };
 		2AECF5C62AE7D30800A463A3 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AECF5C52AE7D30800A463A3 /* Keychain.swift */; };
+		2AF9EB052AE9BC29009F0935 /* DateAndTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF9EB042AE9BC29009F0935 /* DateAndTime.swift */; };
+		2AF9EB072AE9DA8D009F0935 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF9EB062AE9DA8D009F0935 /* StringExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2A18C9582AE6BFE6005A3F7C /* ovk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ovk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A18C9582AE6BFE6005A3F7C /* OpenVK Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenVK Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A18C95B2AE6BFE6005A3F7C /* ovkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ovkApp.swift; sourceTree = "<group>"; };
 		2A18C95D2AE6BFE6005A3F7C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		2A18C95F2AE6BFE6005A3F7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -47,6 +49,8 @@
 		2A95C5672AE909E20042F64C /* LoginSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSettings.swift; sourceTree = "<group>"; };
 		2A95C5692AE9115B0042F64C /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		2AECF5C52AE7D30800A463A3 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		2AF9EB042AE9BC29009F0935 /* DateAndTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAndTime.swift; sourceTree = "<group>"; };
+		2AF9EB062AE9DA8D009F0935 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +75,7 @@
 		2A18C9592AE6BFE6005A3F7C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2A18C9582AE6BFE6005A3F7C /* ovk.app */,
+				2A18C9582AE6BFE6005A3F7C /* OpenVK Swift.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,6 +121,8 @@
 				2A28D6822AE92A7800531DC9 /* UserDefaults.swift */,
 				2A28D6842AE959D400531DC9 /* Localization.swift */,
 				2A28D68A2AE968A100531DC9 /* API.swift */,
+				2AF9EB042AE9BC29009F0935 /* DateAndTime.swift */,
+				2AF9EB062AE9DA8D009F0935 /* StringExtensions.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -152,9 +158,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2A18C9572AE6BFE6005A3F7C /* ovk */ = {
+		2A18C9572AE6BFE6005A3F7C /* OpenVK Swift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2A18C9662AE6BFE6005A3F7C /* Build configuration list for PBXNativeTarget "ovk" */;
+			buildConfigurationList = 2A18C9662AE6BFE6005A3F7C /* Build configuration list for PBXNativeTarget "OpenVK Swift" */;
 			buildPhases = (
 				2A18C9542AE6BFE6005A3F7C /* Sources */,
 				2A18C9552AE6BFE6005A3F7C /* Frameworks */,
@@ -164,9 +170,9 @@
 			);
 			dependencies = (
 			);
-			name = ovk;
+			name = "OpenVK Swift";
 			productName = ovk;
-			productReference = 2A18C9582AE6BFE6005A3F7C /* ovk.app */;
+			productReference = 2A18C9582AE6BFE6005A3F7C /* OpenVK Swift.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -184,7 +190,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2A18C9532AE6BFE6005A3F7C /* Build configuration list for PBXProject "ovk" */;
+			buildConfigurationList = 2A18C9532AE6BFE6005A3F7C /* Build configuration list for PBXProject "OpenVK Swift" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -198,7 +204,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2A18C9572AE6BFE6005A3F7C /* ovk */,
+				2A18C9572AE6BFE6005A3F7C /* OpenVK Swift */,
 			);
 		};
 /* End PBXProject section */
@@ -233,9 +239,11 @@
 				2A6FE33A2AE7B47D00F1D694 /* WebView.swift in Sources */,
 				2A6FE3372AE7A32100F1D694 /* LogIn.swift in Sources */,
 				2A28D6832AE92A7800531DC9 /* UserDefaults.swift in Sources */,
+				2AF9EB052AE9BC29009F0935 /* DateAndTime.swift in Sources */,
 				2A18C95C2AE6BFE6005A3F7C /* ovkApp.swift in Sources */,
 				2AECF5C62AE7D30800A463A3 /* Keychain.swift in Sources */,
 				2A95C55F2AE8EAA90042F64C /* JSONErrors.swift in Sources */,
+				2AF9EB072AE9DA8D009F0935 /* StringExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,7 +376,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = "0.1-alpha";
 				DEVELOPMENT_ASSET_PATHS = "\"ovk/Preview Content\"";
 				DEVELOPMENT_TEAM = 38AATL5X53;
 				ENABLE_PREVIEWS = YES;
@@ -383,7 +391,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = "0.1-alpha";
 				PRODUCT_BUNDLE_IDENTIFIER = isamiri.ru.ovk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -402,7 +410,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = "0.1-alpha";
 				DEVELOPMENT_ASSET_PATHS = "\"ovk/Preview Content\"";
 				DEVELOPMENT_TEAM = 38AATL5X53;
 				ENABLE_PREVIEWS = YES;
@@ -417,7 +425,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = "0.1-alpha";
 				PRODUCT_BUNDLE_IDENTIFIER = isamiri.ru.ovk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -432,7 +440,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2A18C9532AE6BFE6005A3F7C /* Build configuration list for PBXProject "ovk" */ = {
+		2A18C9532AE6BFE6005A3F7C /* Build configuration list for PBXProject "OpenVK Swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2A18C9642AE6BFE6005A3F7C /* Debug */,
@@ -441,7 +449,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2A18C9662AE6BFE6005A3F7C /* Build configuration list for PBXNativeTarget "ovk" */ = {
+		2A18C9662AE6BFE6005A3F7C /* Build configuration list for PBXNativeTarget "OpenVK Swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2A18C9672AE6BFE6005A3F7C /* Debug */,

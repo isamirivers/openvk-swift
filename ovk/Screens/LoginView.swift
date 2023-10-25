@@ -13,6 +13,7 @@ struct LoginView: View {
     
     @State private var login: String = ""
     @State private var password: String = ""
+    @State private var twoFA: String = ""
     
     @State private var showAlert: Bool = false
     @State private var alertText: String = ""
@@ -24,6 +25,8 @@ struct LoginView: View {
     
     @State private var showError: Bool = false
     @State private var errorText: String = ""
+    
+    @State private var show2FA: Bool = false
     
     @State private var instance = "https://openvk.su"
     
@@ -69,11 +72,21 @@ struct LoginView: View {
                         .disableAutocorrection(true)
                         .onChange(of: login, perform: { value in
                             showError = false
+                            show2FA = false
                         })
                     SecureField("Пароль", text: $password)
                         .onChange(of: password, perform: { value in
                             showError = false
+                            show2FA = false
                         })
+                    if show2FA {
+                        TextField("2FA", text: $twoFA)
+                            .autocapitalization(.none)
+                            .disableAutocorrection(true)
+                            .onChange(of: login, perform: { value in
+                                showError = false
+                            })
+                    }
                 } header: {
                     Text("Данные для входа")
                 } footer: {
@@ -93,8 +106,14 @@ struct LoginView: View {
                             isLoading = false
                             
                             if (response!["error_msg"] != nil) {
-                                errorText = response!["error_msg"] as! String
-                                showError = true
+                                if response!["error_msg"] as! String == "Invalid 2FA code" && !show2FA {
+                                    show2FA = true
+                                    isViewUpdated.toggle()
+                                }
+                                else {
+                                    errorText = response!["error_msg"] as! String
+                                    showError = true
+                                }
                             }
                             else {
                                 if !saveValueToKeychain(forKey: "token", value: response!["access_token"]! as! String) {
@@ -108,7 +127,7 @@ struct LoginView: View {
                             }
                             
                         }
-                        LogIn(login: login, password: password, instance: instance, completion: completion)
+                        LogIn(login: login, password: password, instance: instance, code: twoFA, completion: completion)
                     }) {
                         HStack(){
                             Text("Войти")
