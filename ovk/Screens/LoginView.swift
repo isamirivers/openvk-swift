@@ -60,6 +60,7 @@ struct LoginView: View {
                         .disableAutocorrection(true)
                         .onChange(of: login, perform: { value in
                             showError = false
+                            show2FA = false
                         })
                 } header: {
                     Text("Инстанс")
@@ -162,7 +163,7 @@ struct LoginView: View {
                 .allowsHitTesting(!isLoading)
                 .navigationBarTitle("OpenVK Swift")
                 .toolbar {
-                    NavigationLink (destination: LoginSettings(debug: $debug)) {Image(systemName: "gearshape")}
+                    NavigationLink (destination: LoginSettings(debug: $debug, isMainViewUpdated: $isMainViewUpdated)) {Image(systemName: "gearshape")}
                 }
         }
     }

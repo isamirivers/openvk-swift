@@ -21,7 +21,7 @@
 		2A6FE33C2AE7BA4700F1D694 /* JSONthings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FE33B2AE7BA4700F1D694 /* JSONthings.swift */; };
 		2A95C55F2AE8EAA90042F64C /* JSONErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A95C55E2AE8EAA90042F64C /* JSONErrors.swift */; };
 		2A95C5642AE8F24F0042F64C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A95C5632AE8F24F0042F64C /* MainView.swift */; };
-		2A95C5662AE8F6310042F64C /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A95C5652AE8F6310042F64C /* SwiftUIView.swift */; };
+		2A95C5662AE8F6310042F64C /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A95C5652AE8F6310042F64C /* MainScreen.swift */; };
 		2A95C5682AE909E20042F64C /* LoginSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A95C5672AE909E20042F64C /* LoginSettings.swift */; };
 		2A95C56A2AE9115B0042F64C /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2A95C5692AE9115B0042F64C /* Localizable.xcstrings */; };
 		2AECF5C62AE7D30800A463A3 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AECF5C52AE7D30800A463A3 /* Keychain.swift */; };
@@ -45,7 +45,7 @@
 		2A6FE33B2AE7BA4700F1D694 /* JSONthings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONthings.swift; sourceTree = "<group>"; };
 		2A95C55E2AE8EAA90042F64C /* JSONErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONErrors.swift; sourceTree = "<group>"; };
 		2A95C5632AE8F24F0042F64C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		2A95C5652AE8F6310042F64C /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		2A95C5652AE8F6310042F64C /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		2A95C5672AE909E20042F64C /* LoginSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSettings.swift; sourceTree = "<group>"; };
 		2A95C5692AE9115B0042F64C /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		2AECF5C52AE7D30800A463A3 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
@@ -148,7 +148,7 @@
 			children = (
 				2A28D6872AE965A700531DC9 /* Subscreens */,
 				2A18C95D2AE6BFE6005A3F7C /* LoginView.swift */,
-				2A95C5652AE8F6310042F64C /* SwiftUIView.swift */,
+				2A95C5652AE8F6310042F64C /* MainScreen.swift */,
 				2A95C5672AE909E20042F64C /* LoginSettings.swift */,
 				2A28D6802AE9141300531DC9 /* About.swift */,
 			);
@@ -233,7 +233,7 @@
 				2A28D6892AE965B400531DC9 /* Profile.swift in Sources */,
 				2A28D68B2AE968A100531DC9 /* API.swift in Sources */,
 				2A6FE33C2AE7BA4700F1D694 /* JSONthings.swift in Sources */,
-				2A95C5662AE8F6310042F64C /* SwiftUIView.swift in Sources */,
+				2A95C5662AE8F6310042F64C /* MainScreen.swift in Sources */,
 				2A28D6852AE959D400531DC9 /* Localization.swift in Sources */,
 				2A95C5642AE8F24F0042F64C /* MainView.swift in Sources */,
 				2A6FE33A2AE7B47D00F1D694 /* WebView.swift in Sources */,

@@ -39,7 +39,7 @@ func convertTimestampToStatus(_ timestamp: Int, sex: Int=0) -> String {
             break
         }
         
-        return "Был\(a) в сети \(timeDifference/60) час\(hour_a) назад"
+        return "\(getLocalizedString(key: "Was"))\(a) \(getLocalizedString(key: "online")) \(timeDifference/60) \(getLocalizedString(key: "hour"))\(hour_a)\(getLocalizedString(key: "ago"))"
     }
     else {
         let dateFormatter_1 = DateFormatter()
@@ -49,6 +49,6 @@ func convertTimestampToStatus(_ timestamp: Int, sex: Int=0) -> String {
         let date = Date(timeIntervalSince1970: TimeInterval(timestamp))
         let formattedDate_1 = dateFormatter_1.string(from: date)
         let formattedDate_2 = dateFormatter_2.string(from: date)
-        return "\(getLocalizedString(key: "Was"))\(a) \(getLocalizedString(key: "online")) \(formattedDate_1) \(getLocalizedString(key: "at")) \(formattedDate_2)"
+        return "\(getLocalizedString(key: "Was")) \(a)\(getLocalizedString(key: "online")) \(formattedDate_1) \(getLocalizedString(key: "at")) \(formattedDate_2)"
     }
 }

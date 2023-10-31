@@ -1,18 +1,44 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "0.0-alpha" : {
+    "1" : {
+
+    },
+    "2FA" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2FA"
+          }
+        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "0.0-alpha"
+            "value" : "Двойная аутентификация"
           }
         }
       }
     },
-    "2FA" : {
+    "26 Sep at 11:08" : {
 
+    },
+    "ago" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ago"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "назад"
+          }
+        }
+      }
     },
     "at" : {
       "extractionState" : "manual",
@@ -114,6 +140,33 @@
         }
       }
     },
+    "hour" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "hour"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "час"
+          }
+        }
+      }
+    },
+    "ID" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ID"
+          }
+        }
+      }
+    },
     "in" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -130,6 +183,9 @@
           }
         }
       }
+    },
+    "Isami Barinova" : {
+
     },
     "IsamiRi" : {
       "localizations" : {
@@ -230,6 +286,9 @@
         }
       }
     },
+    "nil" : {
+
+    },
     "online" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -302,13 +361,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : " "
+            "value" : "s "
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ов"
+            "value" : "ов "
           }
         }
       }
@@ -319,13 +378,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : " "
+            "value" : "s "
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "а"
+            "value" : "а "
           }
         }
       }
@@ -395,6 +454,9 @@
         }
       }
     },
+    "Альбомы" : {
+
+    },
     "Войти" : {
       "localizations" : {
         "en" : {
@@ -427,6 +489,9 @@
         }
       }
     },
+    "Группы" : {
+
+    },
     "Данные для входа" : {
       "localizations" : {
         "en" : {
@@ -442,6 +507,9 @@
           }
         }
       }
+    },
+    "Друзья" : {
+
     },
     "Зарегистрироваться в браузере" : {
       "localizations" : {
@@ -556,6 +624,9 @@
         }
       }
     },
+    "Остались ещё люди в этом мире у которых нет телеграм шитпоста?" : {
+
+    },
     "Пароль" : {
       "localizations" : {
         "en" : {
@@ -571,6 +642,47 @@
           }
         }
       }
+    },
+    "Подписчики" : {
+
+    },
+    "Показать информацию" : {
+
+    },
+    "Получить" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Get"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Получить"
+          }
+        }
+      }
+    },
+    "Получить профиль другого пользователя" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Get another user's profile"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Получить профиль другого пользователя"
+          }
+        }
+      }
+    },
+    "Посты" : {
+
     },
     "Профиль" : {
       "localizations" : {

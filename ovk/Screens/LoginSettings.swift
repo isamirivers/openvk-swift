@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginSettings: View {
     
     @Binding var debug: Bool
+    @Binding var isMainViewUpdated: Bool
     
     var body: some View {
         Form {
@@ -21,6 +22,8 @@ struct LoginSettings: View {
                     Text("О приложении")
                 }
             }
+            
+            
             Section {
                 ForEach(Array(UserDefaults.standard.dictionaryRepresentation().sorted(by: { $0.key < $1.key })), id: \.0) { key, value in
                     HStack {
@@ -31,6 +34,17 @@ struct LoginSettings: View {
                 }
             } header: {
                 Text("UserDefaults")
+            }
+            
+            
+            Section {
+                Button("Выйти") {
+                    if deleteValueFromKeychain(forKey: "token") {
+                        isMainViewUpdated.toggle()
+                    }
+                }
+                .foregroundStyle(.red)
+                .frame(maxWidth: .infinity, alignment: .center)
             }
         }
         .navigationTitle("Настройки")

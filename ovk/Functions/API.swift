@@ -30,6 +30,11 @@ func CallAPI(function: String, params: [String: String]=[:], completion: @escapi
                 // Обрабатываем полученные данные
                 let responseString = String(data: data, encoding: .utf8)
                 do {
+                    let httpResponse = response as! HTTPURLResponse
+                    if httpResponse.statusCode == 500 {
+                        completion(["error_msg": "Внутренняя ошибка сервера"])
+                        return
+                    }
                     try completion(JSONtoDict(from: responseString!))
                 }
                 catch let error {

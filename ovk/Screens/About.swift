@@ -13,7 +13,7 @@ struct About: View {
             HStack {
                 Text("OpenVK Swift")
                 Spacer()
-                Text("0.0-alpha")
+                Text((Bundle.main.infoDictionary?["CFBundleVersion"] as? String)!)
                     .foregroundStyle(.secondary)
             }
             
