@@ -11,7 +11,7 @@ struct FriendsList: View {
     
     @Binding var debug: Bool
     @Binding var isMainViewUpdated: Bool
-    @Binding var profileHeader: String
+    @State var profileHeader: String
     
     @Binding var userIDtoGet: String
     @Binding var friends: [[String: Any]]

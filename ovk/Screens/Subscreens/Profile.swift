@@ -93,7 +93,7 @@ struct Profile: View {
     }
     
     func loadProfileData() {
-        profileHeader = ""
+        profileHeader = name
         if !loadEnded {
             CallAPI(function: "Account.getProfileInfo", completion: afterGetProfileInfoLoad)
             CallAPI(function: "Users.get", params: ["fields": "status,photo_200,last_seen,online,sex,music,movies,tv,books,city,interests,verified", "user_ids": userIDtoGet], completion: afterProfileDataLoad)
@@ -135,6 +135,7 @@ struct Profile: View {
             last_seen_object = userInfo?["last_seen"] as? [AnyHashable : Any] ?? ["platform": 1, "time": 0]
             online = userInfo?["online"] as? Int ?? 0
             platform = last_seen_object["platform"] as? Int ?? 1
+            sex = userInfo?["sex"] as? Int ?? 0
             if (online == 0) {
                 if last_seen_object["time"] as? Int != 0 {
                     last_seen = "\(convertTimestampToStatus(last_seen_object["time"] as! Int, sex: sex)) \(getPlatform(platform_integer: platform))"
@@ -247,7 +248,7 @@ struct Profile: View {
                 
                 
                 Section {
-                    NavigationLink(destination: FriendsList(debug: $debug, isMainViewUpdated: $isMainViewUpdated, profileHeader: $profileHeader, userIDtoGet: $userIDtoGet, friends: $friends)) {
+                    NavigationLink(destination: FriendsList(debug: $debug, isMainViewUpdated: $isMainViewUpdated, profileHeader: "", userIDtoGet: $userIDtoGet, friends: $friends)) {
                         HStack {
                             Text("Друзья")
                             Spacer()
