@@ -38,7 +38,7 @@ struct FriendsList: View {
    func afterLoadFriendsData(data: [String: Any]?) {
        let response = (data?["response"] as? [[String: Any]])?.first
        
-       if let index = findElementByID(idToFind: response!["id"] as! Int), index >= 0 && index < friends.count {
+       if let index = findElementByID(idToFind: response?["id"] as? Int ?? -1), index >= 0 && index < friends.count {
            friends[index]["photo_50"] = response?["photo_50"]
            friends[index]["status"] = response?["status"]
            friends[index]["verified"] = response?["verified"]

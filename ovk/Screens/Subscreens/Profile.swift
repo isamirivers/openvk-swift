@@ -13,6 +13,8 @@ struct Profile: View {
     @Binding var isMainViewUpdated: Bool
     @Binding var profileHeader: String
     
+    @State var loadEnded = false
+    
     @State var isMoreInfoPopupOpened = false
     
     @State var error = false
@@ -92,9 +94,10 @@ struct Profile: View {
     
     func loadProfileData() {
         profileHeader = ""
-        
-        CallAPI(function: "Account.getProfileInfo", completion: afterGetProfileInfoLoad)
-        CallAPI(function: "Users.get", params: ["fields": "status,photo_200,last_seen,online,sex,music,movies,tv,books,city,interests,verified", "user_ids": userIDtoGet], completion: afterProfileDataLoad)
+        if !loadEnded {
+            CallAPI(function: "Account.getProfileInfo", completion: afterGetProfileInfoLoad)
+            CallAPI(function: "Users.get", params: ["fields": "status,photo_200,last_seen,online,sex,music,movies,tv,books,city,interests,verified", "user_ids": userIDtoGet], completion: afterProfileDataLoad)
+        }
     }
     
     func afterGetProfileInfoLoad(data: [String: Any]?) {
@@ -119,7 +122,6 @@ struct Profile: View {
             error = true
             error_reason = data!["error_msg"] as! String
         }
-        clearProfileVariables()
         if let responseArray = data?["response"] as? [[String: Any]] {
             let userInfo = responseArray.first
             jsonData = userInfo ?? [:]
@@ -153,6 +155,8 @@ struct Profile: View {
             books = userInfo?["books"] as? String ?? ""
             city = userInfo?["city"] as? String ?? ""
             interests = userInfo?["interests"] as? String ?? ""
+            
+            loadEnded = true
         }
     }
     
@@ -193,13 +197,15 @@ struct Profile: View {
             if !error {
                 if debug {
                     Section {
+                        Text("User ID:")
                         TextField("ID", text: $userIDtoGet)
-                        Button ("Получить") {
+                        Button ("Получить/обновить страницу") {
+                            loadEnded = false
                             loadProfileData()
                         }
                         .frame(maxWidth: .infinity, alignment: .center)
                     } header: {
-                        Text("Получить профиль другого пользователя")
+                        Text("Debug")
                     }
                 }
                 
@@ -230,10 +236,13 @@ struct Profile: View {
                         .frame(alignment: .leading)
                         
                     }
-                    Button("Показать информацию") {
-                        isMoreInfoPopupOpened = true
-                    }
+                    if (music == "" && movies == "" && tv == "" && books == "" && city == "" && interests == "") {}
+                    else {
+                        Button("Показать информацию") {
+                            isMoreInfoPopupOpened = true
+                        }
                         .frame(maxWidth: .infinity, alignment: .center)
+                    }
                 }
                 
                 
@@ -282,71 +291,73 @@ struct Profile: View {
                 
                 
                 Section {
-                    Group {
-                        VStack (alignment: .leading) {
-                            HStack (spacing: 15) {
-                                AsyncImage(url: URL(string: profileImage)) { image in image.resizable().scaledToFill() }
-                            placeholder: {
-                                ProgressView()
-                            }
-                            .frame(width: 50, height: 50)
-                            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                                VStack (alignment: .leading) {
-                                    Text("Isami Barinova")
-                                        .font(.headline)
-                                    Text("26 Sep at 11:08")
-                                        .font(.subheadline)
-                                        .foregroundStyle(.secondary)
+                    if debug {
+                        Group {
+                            VStack (alignment: .leading) {
+                                HStack (spacing: 15) {
+                                    AsyncImage(url: URL(string: profileImage)) { image in image.resizable().scaledToFill() }
+                                placeholder: {
+                                    ProgressView()
                                 }
-                                Spacer()
-                                Button (action: {}) {
-                                    Image(systemName: "ellipsis")
-                                        .imageScale(.large)
-                                        .padding(5)
-                                }
-                                .foregroundColor(.secondary)
-                            }
-                            Spacer()
-                                .frame(height: 10)
-                            
-                            Text("Остались ещё люди в этом мире у которых нет телеграм шитпоста?")
-                            
-                            Spacer()
-                                .frame(height: 10)
-                            
-                            HStack {
-                                Button (action: {}) {
-                                    Image(systemName: "arrowshape.turn.up.forward")
-                                        .imageScale(.large)
-                                        .padding(5)
-                                }
-                                .foregroundColor(.secondary)
-                                
-                                Spacer()
-                                Button (action: {}) {
-                                    HStack (spacing: 2) {
-                                        Image(systemName: "bubble")
+                                .frame(width: 50, height: 50)
+                                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                                    VStack (alignment: .leading) {
+                                        Text("Isami Barinova")
+                                            .font(.headline)
+                                        Text("26 Sep at 11:08")
+                                            .font(.subheadline)
+                                            .foregroundStyle(.secondary)
+                                    }
+                                    Spacer()
+                                    Button (action: {}) {
+                                        Image(systemName: "ellipsis")
                                             .imageScale(.large)
                                             .padding(5)
-                                        Text("1")
                                     }
+                                    .foregroundColor(.secondary)
                                 }
-                                .foregroundColor(.secondary)
+                                Spacer()
+                                    .frame(height: 10)
                                 
-                                Button (action: {}) {
-                                    HStack (spacing: 2) {
-                                        Image(systemName: "heart")
+                                Text("Остались ещё люди в этом мире у которых нет телеграм шитпоста?")
+                                
+                                Spacer()
+                                    .frame(height: 10)
+                                
+                                HStack {
+                                    Button (action: {}) {
+                                        Image(systemName: "arrowshape.turn.up.forward")
                                             .imageScale(.large)
                                             .padding(5)
-                                        Text("1")
                                     }
+                                    .foregroundColor(.secondary)
+                                    
+                                    Spacer()
+                                    Button (action: {}) {
+                                        HStack (spacing: 2) {
+                                            Image(systemName: "bubble")
+                                                .imageScale(.large)
+                                                .padding(5)
+                                            Text("1")
+                                        }
+                                    }
+                                    .foregroundColor(.secondary)
+                                    
+                                    Button (action: {}) {
+                                        HStack (spacing: 2) {
+                                            Image(systemName: "heart")
+                                                .imageScale(.large)
+                                                .padding(5)
+                                            Text("1")
+                                        }
+                                    }
+                                    .foregroundColor(.secondary)
                                 }
-                                .foregroundColor(.secondary)
                             }
+                            
+                            
+                            .padding([.top, .bottom], 10)
                         }
-                        
-                        
-                        .padding([.top, .bottom], 10)
                     }
                 } header: {
                     Text("Посты")
@@ -364,6 +375,7 @@ struct Profile: View {
                     Section {
                         TextField("ID", text: $userIDtoGet)
                         Button ("Получить") {
+                            loadEnded = false
                             loadProfileData()
                         }
                         .frame(maxWidth: .infinity, alignment: .center)
@@ -378,7 +390,7 @@ struct Profile: View {
                     .frame(maxWidth: .infinity, alignment: .center)
             }
         }
-        .navigationTitle(profileHeader)
+        .navigationTitle(name)
         .onAppear(perform: loadProfileData)
     }
 }
