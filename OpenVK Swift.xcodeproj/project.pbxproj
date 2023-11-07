@@ -16,9 +16,11 @@
 		2A28D6852AE959D400531DC9 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A28D6842AE959D400531DC9 /* Localization.swift */; };
 		2A28D6892AE965B400531DC9 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A28D6882AE965B400531DC9 /* Profile.swift */; };
 		2A28D68B2AE968A100531DC9 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A28D68A2AE968A100531DC9 /* API.swift */; };
+		2A606A402AF37CF4001789D7 /* UserInfoPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A606A3F2AF37CF4001789D7 /* UserInfoPopup.swift */; };
 		2A6FE3372AE7A32100F1D694 /* LogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FE3362AE7A32100F1D694 /* LogIn.swift */; };
 		2A6FE33A2AE7B47D00F1D694 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FE3392AE7B47D00F1D694 /* WebView.swift */; };
 		2A6FE33C2AE7BA4700F1D694 /* JSONthings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FE33B2AE7BA4700F1D694 /* JSONthings.swift */; };
+		2A8983842AFA247A00408A8A /* FriendsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8983832AFA247A00408A8A /* FriendsList.swift */; };
 		2A95C55F2AE8EAA90042F64C /* JSONErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A95C55E2AE8EAA90042F64C /* JSONErrors.swift */; };
 		2A95C5642AE8F24F0042F64C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A95C5632AE8F24F0042F64C /* MainView.swift */; };
 		2A95C5662AE8F6310042F64C /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A95C5652AE8F6310042F64C /* MainScreen.swift */; };
@@ -40,9 +42,11 @@
 		2A28D6842AE959D400531DC9 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		2A28D6882AE965B400531DC9 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		2A28D68A2AE968A100531DC9 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		2A606A3F2AF37CF4001789D7 /* UserInfoPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoPopup.swift; sourceTree = "<group>"; };
 		2A6FE3362AE7A32100F1D694 /* LogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIn.swift; sourceTree = "<group>"; };
 		2A6FE3392AE7B47D00F1D694 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		2A6FE33B2AE7BA4700F1D694 /* JSONthings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONthings.swift; sourceTree = "<group>"; };
+		2A8983832AFA247A00408A8A /* FriendsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsList.swift; sourceTree = "<group>"; };
 		2A95C55E2AE8EAA90042F64C /* JSONErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONErrors.swift; sourceTree = "<group>"; };
 		2A95C5632AE8F24F0042F64C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		2A95C5652AE8F6310042F64C /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 		2A28D6872AE965A700531DC9 /* Subscreens */ = {
 			isa = PBXGroup;
 			children = (
+				2A8983822AFA246D00408A8A /* SubSubScreens */,
 				2A28D6882AE965B400531DC9 /* Profile.swift */,
 			);
 			path = Subscreens;
@@ -131,8 +136,17 @@
 			isa = PBXGroup;
 			children = (
 				2A6FE3392AE7B47D00F1D694 /* WebView.swift */,
+				2A606A3F2AF37CF4001789D7 /* UserInfoPopup.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2A8983822AFA246D00408A8A /* SubSubScreens */ = {
+			isa = PBXGroup;
+			children = (
+				2A8983832AFA247A00408A8A /* FriendsList.swift */,
+			);
+			path = SubSubScreens;
 			sourceTree = "<group>";
 		};
 		2A95C55D2AE8EA9A0042F64C /* Errors */ = {
@@ -227,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A606A402AF37CF4001789D7 /* UserInfoPopup.swift in Sources */,
 				2A95C5682AE909E20042F64C /* LoginSettings.swift in Sources */,
 				2A18C95E2AE6BFE6005A3F7C /* LoginView.swift in Sources */,
 				2A28D6812AE9141300531DC9 /* About.swift in Sources */,
@@ -242,6 +257,7 @@
 				2AF9EB052AE9BC29009F0935 /* DateAndTime.swift in Sources */,
 				2A18C95C2AE6BFE6005A3F7C /* ovkApp.swift in Sources */,
 				2AECF5C62AE7D30800A463A3 /* Keychain.swift in Sources */,
+				2A8983842AFA247A00408A8A /* FriendsList.swift in Sources */,
 				2A95C55F2AE8EAA90042F64C /* JSONErrors.swift in Sources */,
 				2AF9EB072AE9DA8D009F0935 /* StringExtensions.swift in Sources */,
 			);
@@ -376,7 +392,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "0.1-alpha";
+				CURRENT_PROJECT_VERSION = "0.1.1-alpha";
 				DEVELOPMENT_ASSET_PATHS = "\"ovk/Preview Content\"";
 				DEVELOPMENT_TEAM = 38AATL5X53;
 				ENABLE_PREVIEWS = YES;
@@ -391,7 +407,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = "0.1-alpha";
+				MARKETING_VERSION = "0.1.1-alpha";
 				PRODUCT_BUNDLE_IDENTIFIER = isamiri.ru.ovk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -410,7 +426,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "0.1-alpha";
+				CURRENT_PROJECT_VERSION = "0.1.1-alpha";
 				DEVELOPMENT_ASSET_PATHS = "\"ovk/Preview Content\"";
 				DEVELOPMENT_TEAM = 38AATL5X53;
 				ENABLE_PREVIEWS = YES;
@@ -425,7 +441,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = "0.1-alpha";
+				MARKETING_VERSION = "0.1.1-alpha";
 				PRODUCT_BUNDLE_IDENTIFIER = isamiri.ru.ovk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

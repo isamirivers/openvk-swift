@@ -13,6 +13,8 @@ struct Profile: View {
     @Binding var isMainViewUpdated: Bool
     @Binding var profileHeader: String
     
+    @State var isMoreInfoPopupOpened = false
+    
     @State var error = false
     @State var error_reason = ""
     
@@ -25,8 +27,25 @@ struct Profile: View {
     @State var platform = 1
     @State var sex = 0
     @State var last_seen_object = [:]
-    @State var last_seen = getLocalizedString(key: "Никогда")
+    @State var last_seen = ""
     @State var status = ""
+    @State var verified = 0
+    
+    @State var music = ""
+    @State var movies = ""
+    @State var tv = ""
+    @State var books = ""
+    @State var city = ""
+    @State var interests = ""
+    
+    @State var counts = [
+        "friends": "",
+        "followers": "",
+        "groups": "",
+        "albums": ""
+    ]
+    
+    @State var friends: [[String: Any]] = [[:]]
     
     @State var userIDtoGet: String
     
@@ -39,8 +58,23 @@ struct Profile: View {
         platform = 1
         sex = 0
         last_seen_object = [:]
-        last_seen = getLocalizedString(key: "Никогда")
+        last_seen = ""
+        
         status = ""
+        verified = 0
+        music = ""
+        movies = ""
+        tv = ""
+        books = ""
+        city = ""
+        interests = ""
+        
+        counts = [
+            "friends": "",
+            "followers": "",
+            "groups": "",
+            "albums": ""
+        ]
     }
     
     func getPlatform(platform_integer: Int) -> String {
@@ -57,7 +91,27 @@ struct Profile: View {
     }
     
     func loadProfileData() {
-        CallAPI(function: "Users.get", params: ["fields": "status,photo_200,last_seen,online,sex,music,movies,tv,books,city,interests", "user_ids": userIDtoGet], completion: afterProfileDataLoad)
+        profileHeader = ""
+        
+        CallAPI(function: "Account.getProfileInfo", completion: afterGetProfileInfoLoad)
+        CallAPI(function: "Users.get", params: ["fields": "status,photo_200,last_seen,online,sex,music,movies,tv,books,city,interests,verified", "user_ids": userIDtoGet], completion: afterProfileDataLoad)
+    }
+    
+    func afterGetProfileInfoLoad(data: [String: Any]?) {
+        if (data?["error_msg"] != nil) {
+            error = true
+            error_reason = data!["error_msg"] as! String
+        }
+        
+        let response = data?["response"] as? [String: Any]
+        if userIDtoGet == "0" {
+            userIDtoGet = String(response?["id"] as? Int ?? 0)
+        }
+        
+        CallAPI(function: "Friends.get", params: ["user_id": userIDtoGet, "count": "11"], completion: afterFriendsGetLoad)
+        CallAPI(function: "Users.getFollowers", params: ["user_id": userIDtoGet, "count": "11"], completion: afterFollowersGetLoad)
+        CallAPI(function: "Groups.get", params: ["user_id": userIDtoGet], completion: afterGroupsGetLoad)
+        CallAPI(function: "Photos.getAlbums", params: ["owner_id": userIDtoGet], completion: afterAlbumsGetLoad)
     }
     
     func afterProfileDataLoad(data: [String: Any]?) {
@@ -82,24 +136,62 @@ struct Profile: View {
             if (online == 0) {
                 if last_seen_object["time"] as? Int != 0 {
                     last_seen = "\(convertTimestampToStatus(last_seen_object["time"] as! Int, sex: sex)) \(getPlatform(platform_integer: platform))"
+                } else {
+                    last_seen = getLocalizedString(key: "Никогда")
                 }
             } else {
                 last_seen = "\(getLocalizedString(key: "online").capitalizedSentence) \(getPlatform(platform_integer: platform))"
             }
             status = userInfo?["status"] as? String ?? ""
             profileImage = userInfo?["photo_200"] as? String ?? ""
+            
+            status = userInfo?["status"] as? String ?? ""
+            verified = userInfo?["verified"] as? Int ?? 0
+            music = userInfo?["music"] as? String ?? ""
+            movies = userInfo?["movies"] as? String ?? ""
+            tv = userInfo?["tv"] as? String ?? ""
+            books = userInfo?["books"] as? String ?? ""
+            city = userInfo?["city"] as? String ?? ""
+            interests = userInfo?["interests"] as? String ?? ""
         }
+    }
+    
+    func setCount(data: [String: Any]?, counterName: String) {
+        if (data?["error_msg"] != nil) {
+            counts[counterName] = "error"
+        }
+        let response = data?["response"] as? [String: Any]
+        let CountInt = response?["count"] as? Int ?? -1
+        if CountInt == -1 {
+            counts[counterName] = "error"
+        } else {
+            counts[counterName] = String(CountInt)
+        }
+    }
+    
+    func afterFriendsGetLoad(data: [String: Any]?) {
+        setCount(data: data, counterName: "friends")
+        
+        let response = data?["response"] as? [String: Any]
+        friends = response?["items"] as? [[String: Any]] ?? [[:]]
+    }
+    
+    func afterFollowersGetLoad(data: [String: Any]?) {
+        setCount(data: data, counterName: "followers")
+    }
+    
+    func afterGroupsGetLoad(data: [String: Any]?) {
+        setCount(data: data, counterName: "groups")
+    }
+    
+    func afterAlbumsGetLoad(data: [String: Any]?) {
+        setCount(data: data, counterName: "albums")
     }
     
     var body: some View {
         Form {
             if !error {
                 if debug {
-                    Section {
-                        Text(String(describing: jsonData))
-                    } header: {
-                        Text("Debug")
-                    }
                     Section {
                         TextField("ID", text: $userIDtoGet)
                         Button ("Получить") {
@@ -120,8 +212,13 @@ struct Profile: View {
                     .frame(width: 80, height: 80)
                     .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                         VStack (alignment: .leading) {
-                            Text(name)
-                                .font(.headline)
+                            HStack {
+                                Text(name)
+                                    .font(.headline)
+                                if (verified != 0) {
+                                    Image(systemName: "checkmark")
+                                }
+                            }
                             Text(last_seen)
                                 .font(.subheadline)
                                 .foregroundColor((online != 0) ? .primary : .secondary)
@@ -133,17 +230,20 @@ struct Profile: View {
                         .frame(alignment: .leading)
                         
                     }
-                    Button("Показать информацию") {}
+                    Button("Показать информацию") {
+                        isMoreInfoPopupOpened = true
+                    }
                         .frame(maxWidth: .infinity, alignment: .center)
                 }
                 
                 
                 Section {
-                    NavigationLink(destination: About()) {
+                    NavigationLink(destination: FriendsList(debug: $debug, isMainViewUpdated: $isMainViewUpdated, profileHeader: $profileHeader, userIDtoGet: $userIDtoGet, friends: $friends)) {
                         HStack {
                             Text("Друзья")
                             Spacer()
-                            Text("nil")
+                            if counts["friends"] == "" {ProgressView()}
+                            Text(counts["friends"] ?? "error")
                                 .foregroundStyle(.secondary)
                         }
                     }
@@ -151,24 +251,31 @@ struct Profile: View {
                         HStack {
                             Text("Подписчики")
                             Spacer()
-                            Text("nil")
+                            if counts["followers"] == "" {ProgressView()}
+                            Text(counts["followers"] ?? "error")
                                 .foregroundStyle(.secondary)
                         }
                     }
-                    NavigationLink(destination: About()) {
-                        HStack {
-                            Text("Группы")
-                            Spacer()
-                            Text("nil")
-                                .foregroundStyle(.secondary)
+                    if counts["groups"] != "error" {
+                        NavigationLink(destination: About()) {
+                            HStack {
+                                Text("Группы")
+                                Spacer()
+                                if counts["groups"] == "" {ProgressView()}
+                                Text(counts["groups"] ?? "error")
+                                    .foregroundStyle(.secondary)
+                            }
                         }
                     }
-                    NavigationLink(destination: About()) {
-                        HStack {
-                            Text("Альбомы")
-                            Spacer()
-                            Text("nil")
-                                .foregroundStyle(.secondary)
+                    if counts["albums"] != "error" {
+                        NavigationLink(destination: About()) {
+                            HStack {
+                                Text("Альбомы")
+                                Spacer()
+                                if counts["albums"] == "" {ProgressView()}
+                                Text(counts["albums"] ?? "error")
+                                    .foregroundStyle(.secondary)
+                            }
                         }
                     }
                 }
@@ -244,8 +351,26 @@ struct Profile: View {
                 } header: {
                     Text("Посты")
                 }
+                .sheet(isPresented: $isMoreInfoPopupOpened, content: {
+                    NavigationStack {
+                        UserInfoPopup(music: $music, movies: $movies, tv: $tv, books: $books, city: $city, interests: $interests)
+                            .navigationTitle("Информация")
+                            .navigationBarTitleDisplayMode(.inline)
+                    }
+                })
             }
             else {
+                if debug {
+                    Section {
+                        TextField("ID", text: $userIDtoGet)
+                        Button ("Получить") {
+                            loadProfileData()
+                        }
+                        .frame(maxWidth: .infinity, alignment: .center)
+                    } header: {
+                        Text("Получить профиль другого пользователя")
+                    }
+                }
                 Text("Произошла ошибка загрузки профиля: \(error_reason)")
                 Button("Повторить попытку") {
                     loadProfileData()
@@ -253,6 +378,7 @@ struct Profile: View {
                     .frame(maxWidth: .infinity, alignment: .center)
             }
         }
+        .navigationTitle(profileHeader)
         .onAppear(perform: loadProfileData)
     }
 }

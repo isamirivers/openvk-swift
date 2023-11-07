@@ -1,6 +1,22 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%@" : {
+
+    },
+    "%@ %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@"
+          }
+        }
+      }
+    },
+    "< Вова обнови апи пж >" : {
+
+    },
     "1" : {
 
     },
@@ -286,9 +302,6 @@
         }
       }
     },
-    "nil" : {
-
-    },
     "online" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -455,7 +468,14 @@
       }
     },
     "Альбомы" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Albums"
+          }
+        }
+      }
     },
     "Войти" : {
       "localizations" : {
@@ -489,8 +509,18 @@
         }
       }
     },
-    "Группы" : {
+    "Город" : {
 
+    },
+    "Группы" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Groups"
+          }
+        }
+      }
     },
     "Данные для входа" : {
       "localizations" : {
@@ -509,6 +539,16 @@
       }
     },
     "Друзья" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Friends"
+          }
+        }
+      }
+    },
+    "Загрузка..." : {
 
     },
     "Зарегистрироваться в браузере" : {
@@ -539,6 +579,19 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Инстанс"
+          }
+        }
+      }
+    },
+    "Интересы" : {
+
+    },
+    "Информация" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Information"
           }
         }
       }
@@ -574,6 +627,21 @@
           }
         }
       }
+    },
+    "Любимая музыка" : {
+
+    },
+    "Любимые книги" : {
+
+    },
+    "Любимые ТВ-шоу" : {
+
+    },
+    "Любимые фильмы" : {
+
+    },
+    "Любимые цитаты" : {
+
     },
     "Настройки" : {
       "localizations" : {
@@ -624,6 +692,9 @@
         }
       }
     },
+    "О себе" : {
+
+    },
     "Остались ещё люди в этом мире у которых нет телеграм шитпоста?" : {
 
     },
@@ -643,11 +714,28 @@
         }
       }
     },
-    "Подписчики" : {
+    "Повторить попытку" : {
 
     },
+    "Подписчики" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Followers"
+          }
+        }
+      }
+    },
     "Показать информацию" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show Info"
+          }
+        }
+      }
     },
     "Получить" : {
       "localizations" : {
@@ -682,6 +770,16 @@
       }
     },
     "Посты" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Posts"
+          }
+        }
+      }
+    },
+    "Произошла ошибка загрузки профиля: %@" : {
 
     },
     "Профиль" : {
