@@ -17,9 +17,6 @@
         }
       }
     },
-    "< Вова обнови апи пж >" : {
-
-    },
     "1" : {
 
     },
@@ -38,9 +35,6 @@
           }
         }
       }
-    },
-    "26 Sep at 11:08" : {
-
     },
     "ago" : {
       "extractionState" : "manual",
@@ -92,6 +86,9 @@
         }
       }
     },
+    "E-mail" : {
+
+    },
     "from" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -138,7 +135,24 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "а"
+            "value" : "а "
+          }
+        }
+      }
+    },
+    "gender_male_a" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " "
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " "
           }
         }
       }
@@ -203,9 +217,6 @@
         }
       }
     },
-    "Isami Barinova" : {
-
-    },
     "IsamiRi" : {
       "localizations" : {
         "en" : {
@@ -256,6 +267,7 @@
       }
     },
     "Keychain token: %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -354,6 +366,12 @@
         }
       }
     },
+    "Sex: %lld" : {
+
+    },
+    "Telegram" : {
+
+    },
     "time_spelling_a" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -404,6 +422,9 @@
           }
         }
       }
+    },
+    "Token" : {
+
     },
     "User ID:" : {
 
@@ -557,6 +578,9 @@
     "Загрузка..." : {
 
     },
+    "Зайти через токен (обратите внимание, что будет использован инстанс указанный ниже, так же обратите внимание что нет проверки на верность токена):" : {
+
+    },
     "Зарегистрироваться в браузере" : {
       "localizations" : {
         "en" : {
@@ -649,6 +673,9 @@
     "Любимые цитаты" : {
 
     },
+    "Местоимения" : {
+
+    },
     "Настройки" : {
       "localizations" : {
         "en" : {
@@ -699,9 +726,6 @@
       }
     },
     "О себе" : {
-
-    },
-    "Остались ещё люди в этом мире у которых нет телеграм шитпоста?" : {
 
     },
     "Пароль" : {
@@ -856,6 +880,7 @@
       }
     },
     "Удалить токен из связки ключей" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

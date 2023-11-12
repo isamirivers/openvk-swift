@@ -39,6 +39,13 @@ struct Profile: View {
     @State var books = ""
     @State var city = ""
     @State var interests = ""
+    @State var about = ""
+    @State var email = ""
+    @State var quotes = ""
+    @State var telegram = ""
+    
+    @State var posts = []
+    @State var postsProfiles = []
     
     @State var counts = [
         "friends": "",
@@ -70,6 +77,10 @@ struct Profile: View {
         books = ""
         city = ""
         interests = ""
+        about = ""
+        email = ""
+        quotes = ""
+        telegram = ""
         
         counts = [
             "friends": "",
@@ -96,7 +107,6 @@ struct Profile: View {
         profileHeader = name
         if !loadEnded {
             CallAPI(function: "Account.getProfileInfo", completion: afterGetProfileInfoLoad)
-            CallAPI(function: "Users.get", params: ["fields": "status,photo_200,last_seen,online,sex,music,movies,tv,books,city,interests,verified", "user_ids": userIDtoGet], completion: afterProfileDataLoad)
         }
     }
     
@@ -105,16 +115,19 @@ struct Profile: View {
             error = true
             error_reason = data!["error_msg"] as! String
         }
+        error = false
         
         let response = data?["response"] as? [String: Any]
         if userIDtoGet == "0" {
             userIDtoGet = String(response?["id"] as? Int ?? 0)
         }
         
+        CallAPI(function: "Users.get", params: ["fields": "status,photo_200,last_seen,online,sex,music,movies,tv,books,city,interests,verified,about,email,quotes,telegram", "user_ids": userIDtoGet], completion: afterProfileDataLoad)
         CallAPI(function: "Friends.get", params: ["user_id": userIDtoGet, "count": "11"], completion: afterFriendsGetLoad)
         CallAPI(function: "Users.getFollowers", params: ["user_id": userIDtoGet, "count": "11"], completion: afterFollowersGetLoad)
         CallAPI(function: "Groups.get", params: ["user_id": userIDtoGet], completion: afterGroupsGetLoad)
         CallAPI(function: "Photos.getAlbums", params: ["owner_id": userIDtoGet], completion: afterAlbumsGetLoad)
+        CallAPI(function: "Wall.get", params: ["owner_id": userIDtoGet, "extended": "1", "count": "5"], completion: afterPostsGetLoad)
     }
     
     func afterProfileDataLoad(data: [String: Any]?) {
@@ -156,6 +169,10 @@ struct Profile: View {
             books = userInfo?["books"] as? String ?? ""
             city = userInfo?["city"] as? String ?? ""
             interests = userInfo?["interests"] as? String ?? ""
+            email = userInfo?["email"] as? String ?? ""
+            telegram = userInfo?["telegram"] as? String ?? ""
+            quotes = userInfo?["quotes"] as? String ?? ""
+            about = userInfo?["about"] as? String ?? ""
             
             loadEnded = true
         }
@@ -193,6 +210,13 @@ struct Profile: View {
         setCount(data: data, counterName: "albums")
     }
     
+    func afterPostsGetLoad(data: [String: Any]?) {
+        let response = data?["response"] as? [String: Any]
+        posts = response?["items"] as? [Any] ?? []
+        postsProfiles = response?["profiles"] as? [Any] ?? []
+        
+    }
+    
     var body: some View {
         Form {
             if !error {
@@ -205,6 +229,7 @@ struct Profile: View {
                             loadProfileData()
                         }
                         .frame(maxWidth: .infinity, alignment: .center)
+                        Text("Sex: \(sex)")
                     } header: {
                         Text("Debug")
                     }
@@ -237,13 +262,10 @@ struct Profile: View {
                         .frame(alignment: .leading)
                         
                     }
-                    if (music == "" && movies == "" && tv == "" && books == "" && city == "" && interests == "") {}
-                    else {
-                        Button("Показать информацию") {
-                            isMoreInfoPopupOpened = true
-                        }
-                        .frame(maxWidth: .infinity, alignment: .center)
+                    Button("Показать информацию") {
+                        isMoreInfoPopupOpened = true
                     }
+                    .frame(maxWidth: .infinity, alignment: .center)
                 }
                 
                 
@@ -292,80 +314,20 @@ struct Profile: View {
                 
                 
                 Section {
-                    if debug {
-                        Group {
-                            VStack (alignment: .leading) {
-                                HStack (spacing: 15) {
-                                    AsyncImage(url: URL(string: profileImage)) { image in image.resizable().scaledToFill() }
-                                placeholder: {
-                                    ProgressView()
-                                }
-                                .frame(width: 50, height: 50)
-                                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                                    VStack (alignment: .leading) {
-                                        Text("Isami Barinova")
-                                            .font(.headline)
-                                        Text("26 Sep at 11:08")
-                                            .font(.subheadline)
-                                            .foregroundStyle(.secondary)
-                                    }
-                                    Spacer()
-                                    Button (action: {}) {
-                                        Image(systemName: "ellipsis")
-                                            .imageScale(.large)
-                                            .padding(5)
-                                    }
-                                    .foregroundColor(.secondary)
-                                }
-                                Spacer()
-                                    .frame(height: 10)
-                                
-                                Text("Остались ещё люди в этом мире у которых нет телеграм шитпоста?")
-                                
-                                Spacer()
-                                    .frame(height: 10)
-                                
-                                HStack {
-                                    Button (action: {}) {
-                                        Image(systemName: "arrowshape.turn.up.forward")
-                                            .imageScale(.large)
-                                            .padding(5)
-                                    }
-                                    .foregroundColor(.secondary)
-                                    
-                                    Spacer()
-                                    Button (action: {}) {
-                                        HStack (spacing: 2) {
-                                            Image(systemName: "bubble")
-                                                .imageScale(.large)
-                                                .padding(5)
-                                            Text("1")
-                                        }
-                                    }
-                                    .foregroundColor(.secondary)
-                                    
-                                    Button (action: {}) {
-                                        HStack (spacing: 2) {
-                                            Image(systemName: "heart")
-                                                .imageScale(.large)
-                                                .padding(5)
-                                            Text("1")
-                                        }
-                                    }
-                                    .foregroundColor(.secondary)
-                                }
-                            }
-                            
-                            
-                            .padding([.top, .bottom], 10)
-                        }
+                    ForEach(0..<posts.count, id:\.self) {index in
+                        Post(
+                            post: posts[index] as! Dictionary<String, Any>,
+                            profiles: postsProfiles as! [Dictionary<String, Any>]
+                        )
                     }
                 } header: {
-                    Text("Посты")
+                    if (posts.count > 0) {
+                        Text("Посты")
+                    }
                 }
                 .sheet(isPresented: $isMoreInfoPopupOpened, content: {
                     NavigationStack {
-                        UserInfoPopup(music: $music, movies: $movies, tv: $tv, books: $books, city: $city, interests: $interests)
+                        UserInfoPopup(sex: $sex, music: $music, movies: $movies, tv: $tv, books: $books, city: $city, interests: $interests, quotes: $quotes, email: $email, telegram: $telegram, about: $about)
                             .navigationTitle("Информация")
                             .navigationBarTitleDisplayMode(.inline)
                     }

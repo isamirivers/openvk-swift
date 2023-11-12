@@ -100,7 +100,7 @@ struct FriendsList: View {
                 .frame(maxWidth: .infinity, alignment: .center)
                 .onAppear {
                     offset+=1
-                    CallAPI(function: "Friends.get", params: ["user_id": userIDtoGet, "count": "11", "offset": String(offset)], completion: afterInfiniteScrollLoad)
+                    CallAPI(function: "Friends.get", params: ["user_id": userIDtoGet, "count": "11", "offset": String(offset), "fields": "first_name"], completion: afterInfiniteScrollLoad)
                 }
             }
         }.navigationTitle("Друзья").onAppear(perform: loadFriendsData)

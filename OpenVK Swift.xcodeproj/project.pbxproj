@@ -26,6 +26,7 @@
 		2A95C5662AE8F6310042F64C /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A95C5652AE8F6310042F64C /* MainScreen.swift */; };
 		2A95C5682AE909E20042F64C /* LoginSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A95C5672AE909E20042F64C /* LoginSettings.swift */; };
 		2A95C56A2AE9115B0042F64C /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2A95C5692AE9115B0042F64C /* Localizable.xcstrings */; };
+		2AA309B42AFE0C910074E038 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA309B32AFE0C910074E038 /* Post.swift */; };
 		2AECF5C62AE7D30800A463A3 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AECF5C52AE7D30800A463A3 /* Keychain.swift */; };
 		2AF9EB052AE9BC29009F0935 /* DateAndTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF9EB042AE9BC29009F0935 /* DateAndTime.swift */; };
 		2AF9EB072AE9DA8D009F0935 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF9EB062AE9DA8D009F0935 /* StringExtensions.swift */; };
@@ -52,6 +53,7 @@
 		2A95C5652AE8F6310042F64C /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		2A95C5672AE909E20042F64C /* LoginSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSettings.swift; sourceTree = "<group>"; };
 		2A95C5692AE9115B0042F64C /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		2AA309B32AFE0C910074E038 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		2AECF5C52AE7D30800A463A3 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		2AF9EB042AE9BC29009F0935 /* DateAndTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAndTime.swift; sourceTree = "<group>"; };
 		2AF9EB062AE9DA8D009F0935 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 		2A28D6872AE965A700531DC9 /* Subscreens */ = {
 			isa = PBXGroup;
 			children = (
+				2AA309B22AFE0C840074E038 /* Components */,
 				2A8983822AFA246D00408A8A /* SubSubScreens */,
 				2A28D6882AE965B400531DC9 /* Profile.swift */,
 			);
@@ -167,6 +170,14 @@
 				2A28D6802AE9141300531DC9 /* About.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		2AA309B22AFE0C840074E038 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2AA309B32AFE0C910074E038 /* Post.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +271,7 @@
 				2A8983842AFA247A00408A8A /* FriendsList.swift in Sources */,
 				2A95C55F2AE8EAA90042F64C /* JSONErrors.swift in Sources */,
 				2AF9EB072AE9DA8D009F0935 /* StringExtensions.swift in Sources */,
+				2AA309B42AFE0C910074E038 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +409,8 @@
 				DEVELOPMENT_TEAM = 38AATL5X53;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = OpenVK;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -407,7 +421,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = "0.1.1-alpha";
+				MARKETING_VERSION = "0.1.2-alpha";
 				PRODUCT_BUNDLE_IDENTIFIER = isamiri.ru.ovk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -431,6 +445,8 @@
 				DEVELOPMENT_TEAM = 38AATL5X53;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = OpenVK;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -441,7 +457,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = "0.1.1-alpha";
+				MARKETING_VERSION = "0.1.2-alpha";
 				PRODUCT_BUNDLE_IDENTIFIER = isamiri.ru.ovk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
