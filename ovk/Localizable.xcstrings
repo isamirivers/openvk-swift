@@ -266,23 +266,6 @@
         }
       }
     },
-    "Keychain token: %@" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keychain token: %@"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Токен из связки ключей: %@"
-          }
-        }
-      }
-    },
     "Loading..." : {
       "extractionState" : "manual",
       "localizations" : {
@@ -475,6 +458,12 @@
             "state" : "translated",
             "value" : "Автор"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Автор"
+          }
         }
       }
     },
@@ -490,6 +479,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Адрес"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "URL"
           }
         }
       }
@@ -517,6 +512,12 @@
             "state" : "translated",
             "value" : "Войти"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Увійти"
+          }
         }
       }
     },
@@ -537,7 +538,14 @@
       }
     },
     "Город" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "City"
+          }
+        }
+      }
     },
     "Группы" : {
       "localizations" : {
@@ -562,6 +570,12 @@
             "state" : "translated",
             "value" : "Данные для входа"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дані для входу"
+          }
         }
       }
     },
@@ -576,10 +590,24 @@
       }
     },
     "Загрузка..." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading..."
+          }
+        }
+      }
     },
     "Зайти через токен (обратите внимание, что будет использован инстанс указанный ниже, так же обратите внимание что нет проверки на верность токена):" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Login by token:"
+          }
+        }
+      }
     },
     "Зарегистрироваться в браузере" : {
       "localizations" : {
@@ -593,6 +621,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Зарегистрироваться в браузере"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зареєструватися у браузері"
           }
         }
       }
@@ -610,11 +644,24 @@
             "state" : "translated",
             "value" : "Инстанс"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Інстанція"
+          }
         }
       }
     },
     "Интересы" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Interests"
+          }
+        }
+      }
     },
     "Информация" : {
       "localizations" : {
@@ -639,6 +686,12 @@
             "state" : "translated",
             "value" : "Исходный код"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вихідний код"
+          }
         }
       }
     },
@@ -655,26 +708,74 @@
             "state" : "translated",
             "value" : "Логин"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Логін"
+          }
         }
       }
     },
     "Любимая музыка" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favorite music"
+          }
+        }
+      }
     },
     "Любимые книги" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favorite books"
+          }
+        }
+      }
     },
     "Любимые ТВ-шоу" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favorite TV-shows"
+          }
+        }
+      }
     },
     "Любимые фильмы" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favorite movies"
+          }
+        }
+      }
     },
     "Любимые цитаты" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favorite quotes"
+          }
+        }
+      }
     },
     "Местоимения" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pronouns"
+          }
+        }
+      }
     },
     "Настройки" : {
       "localizations" : {
@@ -688,6 +789,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Настройки"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Налаштування"
           }
         }
       }
@@ -722,11 +829,24 @@
             "state" : "translated",
             "value" : "О приложении"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Про додаток"
+          }
         }
       }
     },
     "О себе" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About"
+          }
+        }
+      }
     },
     "Пароль" : {
       "localizations" : {
@@ -741,11 +861,24 @@
             "state" : "translated",
             "value" : "Пароль"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пароль"
+          }
         }
       }
     },
     "Повторить попытку" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Try again"
+          }
+        }
+      }
     },
     "Подписчики" : {
       "localizations" : {
@@ -800,7 +933,14 @@
       }
     },
     "Получить/обновить страницу" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Get/Refresh"
+          }
+        }
+      }
     },
     "Посты" : {
       "localizations" : {
@@ -812,8 +952,45 @@
         }
       }
     },
+    "Прикреплён опрос: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poll attached: %@"
+          }
+        }
+      }
+    },
+    "Прикреплено аудио: %@ - %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Audio attached: %1$@ - %2$@"
+          }
+        }
+      }
+    },
+    "Прикреплено видео: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Video attached: %@"
+          }
+        }
+      }
+    },
     "Произошла ошибка загрузки профиля: %@" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "There was an error loading profile: %@ :("
+          }
+        }
+      }
     },
     "Профиль" : {
       "localizations" : {
@@ -836,13 +1013,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Debug mode"
+            "value" : "Developer mode"
           }
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Режим разработчика"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Режим розробника"
           }
         }
       }
@@ -860,6 +1043,12 @@
             "state" : "translated",
             "value" : "Сбросить пароль"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скинути пароль"
+          }
         }
       }
     },
@@ -876,22 +1065,11 @@
             "state" : "translated",
             "value" : "Ссылки"
           }
-        }
-      }
-    },
-    "Удалить токен из связки ключей" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Remove token from keychain"
-          }
         },
-        "ru" : {
+        "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Удалить токен из связки ключей"
+            "value" : "Посилання"
           }
         }
       }

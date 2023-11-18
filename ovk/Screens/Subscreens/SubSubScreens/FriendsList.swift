@@ -9,6 +9,8 @@ import SwiftUI
 
 struct FriendsList: View {
     
+    @State var refresh: () -> ()
+    
     @Binding var debug: Bool
     @Binding var isMainViewUpdated: Bool
     @State var profileHeader: String
@@ -18,6 +20,9 @@ struct FriendsList: View {
     @State var errors: [Int:String] = [:]
     @State var offset = 0
     @State var loadingFinished = false
+    
+    @Binding var imageURL: String
+    @Binding var viewerShown: Bool
     
     func findElementByID(idToFind:Int) -> Int? {
         if let index = friends.firstIndex(where: { ($0["id"] as? Int) == idToFind }) {
@@ -48,7 +53,7 @@ struct FriendsList: View {
     func afterInfiniteScrollLoad(data: [String: Any]?) {
         let response = data?["response"] as? [String: Any]
         if let items = response?["items"] as? [[String: Any]] {
-            if items.count == 1 && items.first?["deactivated"] != nil {
+            if items.count == 0 {
                 loadingFinished = true
             }
             friends += items
@@ -87,7 +92,7 @@ struct FriendsList: View {
                         .foregroundColor(.secondary)
                     }
                     .background(
-                        NavigationLink("", destination: Profile(debug: $debug, isMainViewUpdated: $isMainViewUpdated, profileHeader: $profileHeader, userIDtoGet: String(friends[index]["id"] as? Int ?? -1)))
+                        NavigationLink("", destination: Profile(debug: $debug, isMainViewUpdated: $isMainViewUpdated, profileHeader: $profileHeader, userIDtoGet: String(friends[index]["id"] as? Int ?? -1), imageURL: $imageURL, viewerShown: $viewerShown))
                             .opacity(0)
                     )
                 }
@@ -103,6 +108,10 @@ struct FriendsList: View {
                     CallAPI(function: "Friends.get", params: ["user_id": userIDtoGet, "count": "11", "offset": String(offset), "fields": "first_name"], completion: afterInfiniteScrollLoad)
                 }
             }
-        }.navigationTitle("Друзья").onAppear(perform: loadFriendsData)
+        }.navigationTitle("Друзья")
+            .onAppear(perform: loadFriendsData)
+            .refreshable {
+                refresh()
+            }
     }
 }

@@ -17,8 +17,11 @@ struct Profile: View {
     
     @State var isMoreInfoPopupOpened = false
     
+    @State var postsLoadingFinished = false
+    @State var postsOffset = 1
+    
     @State var error = false
-    @State var error_reason = ""
+    @State var errorReason = ""
     
     @State var jsonData = [:]
     @State var profileImage = ""
@@ -28,8 +31,8 @@ struct Profile: View {
     @State var online = 0
     @State var platform = 1
     @State var sex = 0
-    @State var last_seen_object = [:]
-    @State var last_seen = ""
+    @State var lastSeenObject = [:]
+    @State var lastSeen = ""
     @State var status = ""
     @State var verified = 0
     
@@ -58,7 +61,15 @@ struct Profile: View {
     
     @State var userIDtoGet: String
     
+    @Binding var imageURL: String
+    @Binding var viewerShown: Bool
+    
     func clearProfileVariables() {
+        isMoreInfoPopupOpened = false
+        error = false
+        errorReason = ""
+        
+        jsonData = [:]
         profileImage = ""
         first_name = ""
         last_name = ""
@@ -66,11 +77,11 @@ struct Profile: View {
         online = 0
         platform = 1
         sex = 0
-        last_seen_object = [:]
-        last_seen = ""
-        
+        lastSeenObject = [:]
+        lastSeen = ""
         status = ""
         verified = 0
+        
         music = ""
         movies = ""
         tv = ""
@@ -82,12 +93,27 @@ struct Profile: View {
         quotes = ""
         telegram = ""
         
+        posts = []
+        postsProfiles = []
+        
         counts = [
             "friends": "",
             "followers": "",
             "groups": "",
             "albums": ""
         ]
+        
+        friends = [[:]]
+        
+        postsLoadingFinished = false
+        postsOffset = 1
+        
+    }
+    
+    func refresh() {
+        loadEnded = false
+        clearProfileVariables()
+        loadProfileData()
     }
     
     func getPlatform(platform_integer: Int) -> String {
@@ -113,13 +139,17 @@ struct Profile: View {
     func afterGetProfileInfoLoad(data: [String: Any]?) {
         if (data?["error_msg"] != nil) {
             error = true
-            error_reason = data!["error_msg"] as! String
+            errorReason = data!["error_msg"] as! String
         }
         error = false
         
         let response = data?["response"] as? [String: Any]
         if userIDtoGet == "0" {
             userIDtoGet = String(response?["id"] as? Int ?? 0)
+            if userIDtoGet == "0" {
+                error = true
+                errorReason = "Ошибка загрузки ID"
+            }
         }
         
         CallAPI(function: "Users.get", params: ["fields": "status,photo_200,last_seen,online,sex,music,movies,tv,books,city,interests,verified,about,email,quotes,telegram", "user_ids": userIDtoGet], completion: afterProfileDataLoad)
@@ -133,7 +163,7 @@ struct Profile: View {
     func afterProfileDataLoad(data: [String: Any]?) {
         if (data?["error_msg"] != nil) {
             error = true
-            error_reason = data!["error_msg"] as! String
+            errorReason = data!["error_msg"] as! String
         }
         if let responseArray = data?["response"] as? [[String: Any]] {
             let userInfo = responseArray.first
@@ -145,18 +175,18 @@ struct Profile: View {
             last_name = userInfo?["last_name"] as? String ?? ""
             name = "\(first_name) \(last_name)"
             profileHeader = name
-            last_seen_object = userInfo?["last_seen"] as? [AnyHashable : Any] ?? ["platform": 1, "time": 0]
+            lastSeenObject = userInfo?["last_seen"] as? [AnyHashable : Any] ?? ["platform": 1, "time": 0]
             online = userInfo?["online"] as? Int ?? 0
-            platform = last_seen_object["platform"] as? Int ?? 1
+            platform = lastSeenObject["platform"] as? Int ?? 1
             sex = userInfo?["sex"] as? Int ?? 0
             if (online == 0) {
-                if last_seen_object["time"] as? Int != 0 {
-                    last_seen = "\(convertTimestampToStatus(last_seen_object["time"] as! Int, sex: sex)) \(getPlatform(platform_integer: platform))"
+                if lastSeenObject["time"] as? Int != 0 {
+                    lastSeen = "\(convertTimestampToStatus(lastSeenObject["time"] as! Int, sex: sex)) \(getPlatform(platform_integer: platform))"
                 } else {
-                    last_seen = getLocalizedString(key: "Никогда")
+                    lastSeen = getLocalizedString(key: "Никогда")
                 }
             } else {
-                last_seen = "\(getLocalizedString(key: "online").capitalizedSentence) \(getPlatform(platform_integer: platform))"
+                lastSeen = "\(getLocalizedString(key: "online").capitalizedSentence) \(getPlatform(platform_integer: platform))"
             }
             status = userInfo?["status"] as? String ?? ""
             profileImage = userInfo?["photo_200"] as? String ?? ""
@@ -214,7 +244,16 @@ struct Profile: View {
         let response = data?["response"] as? [String: Any]
         posts = response?["items"] as? [Any] ?? []
         postsProfiles = response?["profiles"] as? [Any] ?? []
-        
+    }
+    
+    func afterAdditionalPostsGetLoad(data: [String: Any]?) {
+        let response = data?["response"] as? [String: Any]
+        let postsObj = response?["items"] as? [Any] ?? []
+        if postsObj.count == 0 {
+            postsLoadingFinished = true
+        }
+        posts += postsObj
+        postsProfiles += response?["profiles"] as? [Any] ?? []
     }
     
     var body: some View {
@@ -225,8 +264,7 @@ struct Profile: View {
                         Text("User ID:")
                         TextField("ID", text: $userIDtoGet)
                         Button ("Получить/обновить страницу") {
-                            loadEnded = false
-                            loadProfileData()
+                            refresh()
                         }
                         .frame(maxWidth: .infinity, alignment: .center)
                         Text("Sex: \(sex)")
@@ -251,7 +289,7 @@ struct Profile: View {
                                     Image(systemName: "checkmark")
                                 }
                             }
-                            Text(last_seen)
+                            Text(lastSeen)
                                 .font(.subheadline)
                                 .foregroundColor((online != 0) ? .primary : .secondary)
                             Spacer()
@@ -270,7 +308,7 @@ struct Profile: View {
                 
                 
                 Section {
-                    NavigationLink(destination: FriendsList(debug: $debug, isMainViewUpdated: $isMainViewUpdated, profileHeader: "", userIDtoGet: $userIDtoGet, friends: $friends)) {
+                    NavigationLink(destination: FriendsList(refresh: refresh, debug: $debug, isMainViewUpdated: $isMainViewUpdated, profileHeader: "", userIDtoGet: $userIDtoGet, friends: $friends, imageURL: $imageURL, viewerShown: $viewerShown)) {
                         HStack {
                             Text("Друзья")
                             Spacer()
@@ -317,8 +355,21 @@ struct Profile: View {
                     ForEach(0..<posts.count, id:\.self) {index in
                         Post(
                             post: posts[index] as! Dictionary<String, Any>,
-                            profiles: postsProfiles as! [Dictionary<String, Any>]
+                            profiles: postsProfiles as! [Dictionary<String, Any>],
+                            imageURL: $imageURL,
+                            viewerShown: $viewerShown
                         )
+                    }
+                    if !postsLoadingFinished && posts.count > 0 {
+                        HStack(spacing: 10) {
+                            ProgressView()
+                            Text("Загрузка...")
+                        }
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .onAppear {
+                            postsOffset+=5
+                            CallAPI(function: "Wall.get", params: ["owner_id": userIDtoGet, "extended": "1", "count": "5", "offset": String(postsOffset)], completion: afterAdditionalPostsGetLoad)
+                        }
                     }
                 } header: {
                     if (posts.count > 0) {
@@ -346,7 +397,7 @@ struct Profile: View {
                         Text("Получить профиль другого пользователя")
                     }
                 }
-                Text("Произошла ошибка загрузки профиля: \(error_reason)")
+                Text("Произошла ошибка загрузки профиля: \(errorReason)")
                 Button("Повторить попытку") {
                     loadProfileData()
                 }
@@ -354,6 +405,9 @@ struct Profile: View {
             }
         }
         .navigationTitle(name)
+        .refreshable {
+            refresh()
+        }
         .onAppear(perform: loadProfileData)
     }
 }

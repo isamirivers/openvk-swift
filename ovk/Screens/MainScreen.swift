@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ImageViewerRemote
 
 struct MainScreen: View {
     
@@ -18,6 +19,9 @@ struct MainScreen: View {
     @Binding var debug: Bool
     
     @State var selectedTab = "profile"
+    
+    @State var imageURL = ""
+    @State var viewerShown = false
     
     var body: some View {
         
@@ -32,7 +36,7 @@ struct MainScreen: View {
         
         NavigationStack{
             TabView (selection: $selectedTab) {
-                Profile(debug: $debug, isMainViewUpdated: $isMainViewUpdated, profileHeader: $profileHeader, userIDtoGet: "0")
+                Profile(debug: $debug, isMainViewUpdated: $isMainViewUpdated, profileHeader: $profileHeader, userIDtoGet: "0", imageURL: $imageURL, viewerShown: $viewerShown)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                 .tabItem {
                     Image(systemName: "person.crop.circle")
@@ -56,6 +60,7 @@ struct MainScreen: View {
         }
             // Костыль, чтобы обновлять экран ¯\_(ツ)_/¯ 👇🏼 (не осуждайте пж)
             .background(isViewUpdated ? Color.clear : Color.clear)
+            .overlay(ImageViewerRemote(imageURL: $imageURL, viewerShown: $viewerShown))
     }
 }
 

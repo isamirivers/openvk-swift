@@ -36,7 +36,7 @@ func CallAPI(function: String, params: [String: String]=[:], completion: @escapi
             } else if let data = data {
                 // Обрабатываем полученные данные
                 let responseString = String(data: data, encoding: .utf8)
-                print("\(url):\n\(responseString)\n----------\n\n")
+                print("\(url):\n\(responseString)\n\n----------")
                 do {
                     let httpResponse = response as! HTTPURLResponse
                     if httpResponse.statusCode == 500 {
