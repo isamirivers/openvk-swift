@@ -30,6 +30,8 @@ struct LoginView: View {
     
     @State private var instance = "https://openvk.su"
     
+    @State private var customToken = ""
+    
     // Эта хрень обновляет view 👇🏼
     @State private var isViewUpdated = false
     @Binding var isMainViewUpdated: Bool
@@ -41,13 +43,18 @@ struct LoginView: View {
                 
                 if debug {
                     Section /* DEBUG */ {
-                        Text("Keychain token: \(getValueFromKeychain(forKey:"token") ?? "nil")")
-                        Button("Удалить токен из связки ключей") {
-                            if deleteValueFromKeychain(forKey: "token") {
-                                isViewUpdated.toggle()
+                        Text("Зайти через токен (обратите внимание, что будет использован инстанс указанный ниже, так же обратите внимание что нет проверки на верность токена):")
+                        TextField("Token", text: $customToken)
+                        Button("Войти") {
+                            if !saveValueToKeychain(forKey: "token", value: customToken) {
+                                errorText = "Токен не может быть сохранён, так как имеется другой"
+                                showError = true
+                            }
+                            else {
+                                isMainViewUpdated.toggle()
+                                saveValueToUserDefaults(forKey: "instance", value: instance)
                             }
                         }
-                        .foregroundColor(.red)
                     } header: {
                         Text("Debug")
                     }
@@ -60,6 +67,7 @@ struct LoginView: View {
                         .disableAutocorrection(true)
                         .onChange(of: login, perform: { value in
                             showError = false
+                            show2FA = false
                         })
                 } header: {
                     Text("Инстанс")
@@ -162,7 +170,7 @@ struct LoginView: View {
                 .allowsHitTesting(!isLoading)
                 .navigationBarTitle("OpenVK Swift")
                 .toolbar {
-                    NavigationLink (destination: LoginSettings(debug: $debug)) {Image(systemName: "gearshape")}
+                    NavigationLink (destination: LoginSettings(debug: $debug, isMainViewUpdated: $isMainViewUpdated)) {Image(systemName: "gearshape")}
                 }
         }
     }

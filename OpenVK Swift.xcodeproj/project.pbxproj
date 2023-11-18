@@ -16,14 +16,19 @@
 		2A28D6852AE959D400531DC9 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A28D6842AE959D400531DC9 /* Localization.swift */; };
 		2A28D6892AE965B400531DC9 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A28D6882AE965B400531DC9 /* Profile.swift */; };
 		2A28D68B2AE968A100531DC9 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A28D68A2AE968A100531DC9 /* API.swift */; };
+		2A606A402AF37CF4001789D7 /* UserInfoPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A606A3F2AF37CF4001789D7 /* UserInfoPopup.swift */; };
 		2A6FE3372AE7A32100F1D694 /* LogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FE3362AE7A32100F1D694 /* LogIn.swift */; };
 		2A6FE33A2AE7B47D00F1D694 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FE3392AE7B47D00F1D694 /* WebView.swift */; };
 		2A6FE33C2AE7BA4700F1D694 /* JSONthings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FE33B2AE7BA4700F1D694 /* JSONthings.swift */; };
+		2A8983842AFA247A00408A8A /* FriendsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8983832AFA247A00408A8A /* FriendsList.swift */; };
+		2A90D2AA2B096E4C0085DE73 /* ImageViewer in Frameworks */ = {isa = PBXBuildFile; productRef = 2A90D2A92B096E4C0085DE73 /* ImageViewer */; };
+		2A90D2AC2B096E4C0085DE73 /* ImageViewerRemote in Frameworks */ = {isa = PBXBuildFile; productRef = 2A90D2AB2B096E4C0085DE73 /* ImageViewerRemote */; };
 		2A95C55F2AE8EAA90042F64C /* JSONErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A95C55E2AE8EAA90042F64C /* JSONErrors.swift */; };
 		2A95C5642AE8F24F0042F64C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A95C5632AE8F24F0042F64C /* MainView.swift */; };
-		2A95C5662AE8F6310042F64C /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A95C5652AE8F6310042F64C /* SwiftUIView.swift */; };
+		2A95C5662AE8F6310042F64C /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A95C5652AE8F6310042F64C /* MainScreen.swift */; };
 		2A95C5682AE909E20042F64C /* LoginSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A95C5672AE909E20042F64C /* LoginSettings.swift */; };
 		2A95C56A2AE9115B0042F64C /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2A95C5692AE9115B0042F64C /* Localizable.xcstrings */; };
+		2AA309B42AFE0C910074E038 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA309B32AFE0C910074E038 /* Post.swift */; };
 		2AECF5C62AE7D30800A463A3 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AECF5C52AE7D30800A463A3 /* Keychain.swift */; };
 		2AF9EB052AE9BC29009F0935 /* DateAndTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF9EB042AE9BC29009F0935 /* DateAndTime.swift */; };
 		2AF9EB072AE9DA8D009F0935 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF9EB062AE9DA8D009F0935 /* StringExtensions.swift */; };
@@ -40,14 +45,17 @@
 		2A28D6842AE959D400531DC9 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		2A28D6882AE965B400531DC9 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		2A28D68A2AE968A100531DC9 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		2A606A3F2AF37CF4001789D7 /* UserInfoPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoPopup.swift; sourceTree = "<group>"; };
 		2A6FE3362AE7A32100F1D694 /* LogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIn.swift; sourceTree = "<group>"; };
 		2A6FE3392AE7B47D00F1D694 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		2A6FE33B2AE7BA4700F1D694 /* JSONthings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONthings.swift; sourceTree = "<group>"; };
+		2A8983832AFA247A00408A8A /* FriendsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsList.swift; sourceTree = "<group>"; };
 		2A95C55E2AE8EAA90042F64C /* JSONErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONErrors.swift; sourceTree = "<group>"; };
 		2A95C5632AE8F24F0042F64C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		2A95C5652AE8F6310042F64C /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		2A95C5652AE8F6310042F64C /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		2A95C5672AE909E20042F64C /* LoginSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSettings.swift; sourceTree = "<group>"; };
 		2A95C5692AE9115B0042F64C /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		2AA309B32AFE0C910074E038 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		2AECF5C52AE7D30800A463A3 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		2AF9EB042AE9BC29009F0935 /* DateAndTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAndTime.swift; sourceTree = "<group>"; };
 		2AF9EB062AE9DA8D009F0935 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
@@ -58,6 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A90D2AC2B096E4C0085DE73 /* ImageViewerRemote in Frameworks */,
+				2A90D2AA2B096E4C0085DE73 /* ImageViewer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +117,8 @@
 		2A28D6872AE965A700531DC9 /* Subscreens */ = {
 			isa = PBXGroup;
 			children = (
+				2AA309B22AFE0C840074E038 /* Components */,
+				2A8983822AFA246D00408A8A /* SubSubScreens */,
 				2A28D6882AE965B400531DC9 /* Profile.swift */,
 			);
 			path = Subscreens;
@@ -131,8 +143,17 @@
 			isa = PBXGroup;
 			children = (
 				2A6FE3392AE7B47D00F1D694 /* WebView.swift */,
+				2A606A3F2AF37CF4001789D7 /* UserInfoPopup.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2A8983822AFA246D00408A8A /* SubSubScreens */ = {
+			isa = PBXGroup;
+			children = (
+				2A8983832AFA247A00408A8A /* FriendsList.swift */,
+			);
+			path = SubSubScreens;
 			sourceTree = "<group>";
 		};
 		2A95C55D2AE8EA9A0042F64C /* Errors */ = {
@@ -148,11 +169,19 @@
 			children = (
 				2A28D6872AE965A700531DC9 /* Subscreens */,
 				2A18C95D2AE6BFE6005A3F7C /* LoginView.swift */,
-				2A95C5652AE8F6310042F64C /* SwiftUIView.swift */,
+				2A95C5652AE8F6310042F64C /* MainScreen.swift */,
 				2A95C5672AE909E20042F64C /* LoginSettings.swift */,
 				2A28D6802AE9141300531DC9 /* About.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		2AA309B22AFE0C840074E038 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2AA309B32AFE0C910074E038 /* Post.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +200,10 @@
 			dependencies = (
 			);
 			name = "OpenVK Swift";
+			packageProductDependencies = (
+				2A90D2A92B096E4C0085DE73 /* ImageViewer */,
+				2A90D2AB2B096E4C0085DE73 /* ImageViewerRemote */,
+			);
 			productName = ovk;
 			productReference = 2A18C9582AE6BFE6005A3F7C /* OpenVK Swift.app */;
 			productType = "com.apple.product-type.application";
@@ -198,8 +231,12 @@
 				en,
 				Base,
 				ru,
+				uk,
 			);
 			mainGroup = 2A18C94F2AE6BFE6005A3F7C;
+			packageReferences = (
+				2A90D2A82B096E4C0085DE73 /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */,
+			);
 			productRefGroup = 2A18C9592AE6BFE6005A3F7C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -227,13 +264,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A606A402AF37CF4001789D7 /* UserInfoPopup.swift in Sources */,
 				2A95C5682AE909E20042F64C /* LoginSettings.swift in Sources */,
 				2A18C95E2AE6BFE6005A3F7C /* LoginView.swift in Sources */,
 				2A28D6812AE9141300531DC9 /* About.swift in Sources */,
 				2A28D6892AE965B400531DC9 /* Profile.swift in Sources */,
 				2A28D68B2AE968A100531DC9 /* API.swift in Sources */,
 				2A6FE33C2AE7BA4700F1D694 /* JSONthings.swift in Sources */,
-				2A95C5662AE8F6310042F64C /* SwiftUIView.swift in Sources */,
+				2A95C5662AE8F6310042F64C /* MainScreen.swift in Sources */,
 				2A28D6852AE959D400531DC9 /* Localization.swift in Sources */,
 				2A95C5642AE8F24F0042F64C /* MainView.swift in Sources */,
 				2A6FE33A2AE7B47D00F1D694 /* WebView.swift in Sources */,
@@ -242,8 +280,10 @@
 				2AF9EB052AE9BC29009F0935 /* DateAndTime.swift in Sources */,
 				2A18C95C2AE6BFE6005A3F7C /* ovkApp.swift in Sources */,
 				2AECF5C62AE7D30800A463A3 /* Keychain.swift in Sources */,
+				2A8983842AFA247A00408A8A /* FriendsList.swift in Sources */,
 				2A95C55F2AE8EAA90042F64C /* JSONErrors.swift in Sources */,
 				2AF9EB072AE9DA8D009F0935 /* StringExtensions.swift in Sources */,
+				2AA309B42AFE0C910074E038 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,11 +416,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "0.1-alpha";
+				CURRENT_PROJECT_VERSION = "0.2.0-alpha";
 				DEVELOPMENT_ASSET_PATHS = "\"ovk/Preview Content\"";
 				DEVELOPMENT_TEAM = 38AATL5X53;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = OpenVK;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -391,7 +433,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = "0.1-alpha";
+				MARKETING_VERSION = "0.2.0-alpha";
 				PRODUCT_BUNDLE_IDENTIFIER = isamiri.ru.ovk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -410,11 +452,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "0.1-alpha";
+				CURRENT_PROJECT_VERSION = "0.2.0-alpha";
 				DEVELOPMENT_ASSET_PATHS = "\"ovk/Preview Content\"";
 				DEVELOPMENT_TEAM = 38AATL5X53;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = OpenVK;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -425,7 +469,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = "0.1-alpha";
+				MARKETING_VERSION = "0.2.0-alpha";
 				PRODUCT_BUNDLE_IDENTIFIER = isamiri.ru.ovk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -459,6 +503,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2A90D2A82B096E4C0085DE73 /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Jake-Short/swiftui-image-viewer.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2A90D2A92B096E4C0085DE73 /* ImageViewer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A90D2A82B096E4C0085DE73 /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */;
+			productName = ImageViewer;
+		};
+		2A90D2AB2B096E4C0085DE73 /* ImageViewerRemote */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A90D2A82B096E4C0085DE73 /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */;
+			productName = ImageViewerRemote;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2A18C9502AE6BFE6005A3F7C /* Project object */;
 }

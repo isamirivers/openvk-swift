@@ -18,7 +18,7 @@ func LogIn(login: String, password: String, instance: String, code: String="", c
     }
     
     // Создаем URL для GET-запроса
-    if let url = URL(string: "\(instance)/token?username=\(escaped_login)&password=\(escaped_password)&grant_type=password&client_name=openvk_swift\(query_code)") {
+    if let url = URL(string: "\(instance)/token?username=\(escaped_login)&password=\(escaped_password)&grant_type=password&client_name=openvk_ios\(query_code)") {
         // Создаем URLSession
         let session = URLSession.shared
         

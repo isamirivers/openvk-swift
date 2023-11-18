@@ -1,18 +1,57 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "0.0-alpha" : {
+    "" : {
+
+    },
+    "%@" : {
+
+    },
+    "%@ %@" : {
       "localizations" : {
-        "ru" : {
+        "en" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "0.0-alpha"
+            "state" : "new",
+            "value" : "%1$@ %2$@"
           }
         }
       }
     },
-    "2FA" : {
+    "1" : {
 
+    },
+    "2FA" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2FA"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Двойная аутентификация"
+          }
+        }
+      }
+    },
+    "ago" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ago"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "назад"
+          }
+        }
+      }
     },
     "at" : {
       "extractionState" : "manual",
@@ -46,6 +85,9 @@
           }
         }
       }
+    },
+    "E-mail" : {
+
     },
     "from" : {
       "extractionState" : "manual",
@@ -93,7 +135,24 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "а"
+            "value" : "а "
+          }
+        }
+      }
+    },
+    "gender_male_a" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " "
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " "
           }
         }
       }
@@ -110,6 +169,33 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "GitHub"
+          }
+        }
+      }
+    },
+    "hour" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "hour"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "час"
+          }
+        }
+      }
+    },
+    "ID" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ID"
           }
         }
       }
@@ -176,22 +262,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ключ"
-          }
-        }
-      }
-    },
-    "Keychain token: %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keychain token: %@"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Токен из связки ключей: %@"
           }
         }
       }
@@ -279,6 +349,12 @@
         }
       }
     },
+    "Sex: %lld" : {
+
+    },
+    "Telegram" : {
+
+    },
     "time_spelling_a" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -302,13 +378,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : " "
+            "value" : "s "
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ов"
+            "value" : "ов "
           }
         }
       }
@@ -319,16 +395,22 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : " "
+            "value" : "s "
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "а"
+            "value" : "а "
           }
         }
       }
+    },
+    "Token" : {
+
+    },
+    "User ID:" : {
+
     },
     "UserDefaults" : {
       "localizations" : {
@@ -376,6 +458,12 @@
             "state" : "translated",
             "value" : "Автор"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Автор"
+          }
         }
       }
     },
@@ -392,6 +480,22 @@
             "state" : "translated",
             "value" : "Адрес"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "URL"
+          }
+        }
+      }
+    },
+    "Альбомы" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Albums"
+          }
         }
       }
     },
@@ -407,6 +511,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Войти"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Увійти"
           }
         }
       }
@@ -427,6 +537,26 @@
         }
       }
     },
+    "Город" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "City"
+          }
+        }
+      }
+    },
+    "Группы" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Groups"
+          }
+        }
+      }
+    },
     "Данные для входа" : {
       "localizations" : {
         "en" : {
@@ -439,6 +569,42 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Данные для входа"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дані для входу"
+          }
+        }
+      }
+    },
+    "Друзья" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Friends"
+          }
+        }
+      }
+    },
+    "Загрузка..." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading..."
+          }
+        }
+      }
+    },
+    "Зайти через токен (обратите внимание, что будет использован инстанс указанный ниже, так же обратите внимание что нет проверки на верность токена):" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Login by token:"
           }
         }
       }
@@ -456,6 +622,12 @@
             "state" : "translated",
             "value" : "Зарегистрироваться в браузере"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зареєструватися у браузері"
+          }
         }
       }
     },
@@ -471,6 +643,32 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Инстанс"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Інстанція"
+          }
+        }
+      }
+    },
+    "Интересы" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Interests"
+          }
+        }
+      }
+    },
+    "Информация" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Information"
           }
         }
       }
@@ -488,6 +686,12 @@
             "state" : "translated",
             "value" : "Исходный код"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вихідний код"
+          }
         }
       }
     },
@@ -504,6 +708,72 @@
             "state" : "translated",
             "value" : "Логин"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Логін"
+          }
+        }
+      }
+    },
+    "Любимая музыка" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favorite music"
+          }
+        }
+      }
+    },
+    "Любимые книги" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favorite books"
+          }
+        }
+      }
+    },
+    "Любимые ТВ-шоу" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favorite TV-shows"
+          }
+        }
+      }
+    },
+    "Любимые фильмы" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favorite movies"
+          }
+        }
+      }
+    },
+    "Любимые цитаты" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favorite quotes"
+          }
+        }
+      }
+    },
+    "Местоимения" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pronouns"
+          }
         }
       }
     },
@@ -519,6 +789,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Настройки"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Налаштування"
           }
         }
       }
@@ -553,6 +829,22 @@
             "state" : "translated",
             "value" : "О приложении"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Про додаток"
+          }
+        }
+      }
+    },
+    "О себе" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About"
+          }
         }
       }
     },
@@ -568,6 +860,134 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Пароль"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пароль"
+          }
+        }
+      }
+    },
+    "Повторить попытку" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Try again"
+          }
+        }
+      }
+    },
+    "Подписчики" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Followers"
+          }
+        }
+      }
+    },
+    "Показать информацию" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show Info"
+          }
+        }
+      }
+    },
+    "Получить" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Get"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Получить"
+          }
+        }
+      }
+    },
+    "Получить профиль другого пользователя" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Get another user's profile"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Получить профиль другого пользователя"
+          }
+        }
+      }
+    },
+    "Получить/обновить страницу" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Get/Refresh"
+          }
+        }
+      }
+    },
+    "Посты" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Posts"
+          }
+        }
+      }
+    },
+    "Прикреплён опрос: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poll attached: %@"
+          }
+        }
+      }
+    },
+    "Прикреплено аудио: %@ - %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Audio attached: %1$@ - %2$@"
+          }
+        }
+      }
+    },
+    "Прикреплено видео: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Video attached: %@"
+          }
+        }
+      }
+    },
+    "Произошла ошибка загрузки профиля: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "There was an error loading profile: %@ :("
           }
         }
       }
@@ -593,13 +1013,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Debug mode"
+            "value" : "Developer mode"
           }
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Режим разработчика"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Режим розробника"
           }
         }
       }
@@ -617,6 +1043,12 @@
             "state" : "translated",
             "value" : "Сбросить пароль"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скинути пароль"
+          }
         }
       }
     },
@@ -633,21 +1065,11 @@
             "state" : "translated",
             "value" : "Ссылки"
           }
-        }
-      }
-    },
-    "Удалить токен из связки ключей" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Remove token from keychain"
-          }
         },
-        "ru" : {
+        "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Удалить токен из связки ключей"
+            "value" : "Посилання"
           }
         }
       }

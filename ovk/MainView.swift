@@ -18,7 +18,7 @@ struct MainView: View {
                 LoginView(debug: $debug, isMainViewUpdated: $isMainViewUpdated)
             }
             else {
-                SwiftUIView(isMainViewUpdated: $isMainViewUpdated, debug: $debug)
+                MainScreen(isMainViewUpdated: $isMainViewUpdated, debug: $debug)
             }
         }
         // Костыль, чтобы обновлять экран ¯\_(ツ)_/¯ 👇🏼 (не осуждайте пж)

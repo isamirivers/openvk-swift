@@ -11,13 +11,20 @@ func convertToQueryString(_ parameters: [String: String]) -> String {
     return parameters.map { "\($0.key)=\($0.value)" }.joined(separator: "&")
 }
 
+func changeFirstLetterToLowercase(_ inputString: String) -> String {
+    guard let firstCharacter = inputString.first else {
+        return inputString
+    }
+    return String(firstCharacter).lowercased() + inputString.dropFirst()
+}
+
 func CallAPI(function: String, params: [String: String]=[:], completion: @escaping ([String: Any]?) -> Void) {
     
     let instance = getValueFromUserDefaults(forKey: "instance") ?? "https://openvk.su"
     let token = getValueFromKeychain(forKey: "token") ?? ""
     
     // Создаем URL для GET-запроса
-    if let url = URL(string: "\(instance)/method/\(function)?access_token=\(token)&\(convertToQueryString(params))") {
+    if let url = URL(string: "\(instance)/method/\(changeFirstLetterToLowercase(function))?access_token=\(token)&\(convertToQueryString(params))&v=5.154") {
         // Создаем URLSession
         let session = URLSession.shared
         
@@ -29,7 +36,13 @@ func CallAPI(function: String, params: [String: String]=[:], completion: @escapi
             } else if let data = data {
                 // Обрабатываем полученные данные
                 let responseString = String(data: data, encoding: .utf8)
+                print("\(url):\n\(responseString)\n\n----------")
                 do {
+                    let httpResponse = response as! HTTPURLResponse
+                    if httpResponse.statusCode == 500 {
+                        completion(["error_msg": "Внутренняя ошибка сервера"])
+                        return
+                    }
                     try completion(JSONtoDict(from: responseString!))
                 }
                 catch let error {

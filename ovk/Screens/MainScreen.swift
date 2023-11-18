@@ -6,24 +6,37 @@
 //
 
 import SwiftUI
+import ImageViewerRemote
 
-struct SwiftUIView: View {
+struct MainScreen: View {
     
     // Эта хрень обновляет view 👇🏼
     @State private var isViewUpdated = false
     @Binding var isMainViewUpdated: Bool
     
+    @State private var profileHeader = ""
+    
     @Binding var debug: Bool
     
     @State var selectedTab = "profile"
-    @State var tabNames = [
-        "debug": getLocalizedString(key: "Debug")
-    ]
+    
+    @State var imageURL = ""
+    @State var viewerShown = false
     
     var body: some View {
+        
+        @State var tabNames = [
+            "profile": profileHeader,
+            "debug": getLocalizedString(key: "Debug")
+        ]
+        
+        @State var inlineTabs = [
+            "profile"
+        ]
+        
         NavigationStack{
             TabView (selection: $selectedTab) {
-                Profile(debug: $debug, isMainViewUpdated: $isMainViewUpdated)
+                Profile(debug: $debug, isMainViewUpdated: $isMainViewUpdated, profileHeader: $profileHeader, userIDtoGet: "0", imageURL: $imageURL, viewerShown: $viewerShown)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                 .tabItem {
                     Image(systemName: "person.crop.circle")
@@ -31,7 +44,7 @@ struct SwiftUIView: View {
                 }
                 .tag("profile")
                 
-                LoginSettings(debug: $debug)
+                LoginSettings(debug: $debug, isMainViewUpdated: $isMainViewUpdated)
                     .tabItem {
                         Image(systemName: "gear")
                         Text("Debug")
@@ -43,10 +56,11 @@ struct SwiftUIView: View {
                 
             }
             .navigationTitle(tabNames[String(describing: selectedTab)] ?? "")
-            //.navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitleDisplayMode(inlineTabs.contains(String(describing: selectedTab)) ? .inline : .automatic)
         }
             // Костыль, чтобы обновлять экран ¯\_(ツ)_/¯ 👇🏼 (не осуждайте пж)
             .background(isViewUpdated ? Color.clear : Color.clear)
+            .overlay(ImageViewerRemote(imageURL: $imageURL, viewerShown: $viewerShown))
     }
 }
 
