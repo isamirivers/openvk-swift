@@ -99,6 +99,7 @@ struct Post: View {
                         }.cornerRadius(10)
                         }.cornerRadius(10)
                     }
+                    .buttonStyle(BorderlessButtonStyle())
                 }
                 
                 // Фотографии
@@ -112,7 +113,9 @@ struct Post: View {
                             if (attachments.indices.contains(index)) {
                                 if (attachments[index]["type"] as? String) == "photo" {
                                     Button(action: {
+                                        print("Бутон нажат с индексом \(index)")
                                         imageURL = tempfunc(post: post, size: 10, image_index: index)
+                                        print(imageURL + "\n-----")
                                         viewerShown = true
                                     }) {
                                         AsyncImage(url: URL(string: tempfunc(post: post, size: 10, image_index: index))) { image in image.resizable().scaledToFill().frame(width: 100, height: 100) }
@@ -123,6 +126,7 @@ struct Post: View {
                                             }.cornerRadius(10).frame(width: 100, height: 100)
                                         }.cornerRadius(10).frame(width: 100, height: 100)
                                     }
+                                    .buttonStyle(BorderlessButtonStyle())
                                 }
                             }
                         }

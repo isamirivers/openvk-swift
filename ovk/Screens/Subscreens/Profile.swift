@@ -377,7 +377,7 @@ struct Profile: View {
                     }
                 }
                 .sheet(isPresented: $isMoreInfoPopupOpened, content: {
-                    NavigationStack {
+                    NavigationView {
                         UserInfoPopup(sex: $sex, music: $music, movies: $movies, tv: $tv, books: $books, city: $city, interests: $interests, quotes: $quotes, email: $email, telegram: $telegram, about: $about)
                             .navigationTitle("Информация")
                             .navigationBarTitleDisplayMode(.inline)

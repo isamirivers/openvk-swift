@@ -27,6 +27,7 @@ struct MainScreen: View {
         
         @State var tabNames = [
             "profile": profileHeader,
+            "feed": getLocalizedString(key: "Feed"),
             "debug": getLocalizedString(key: "Debug")
         ]
         
@@ -34,7 +35,7 @@ struct MainScreen: View {
             "profile"
         ]
         
-        NavigationStack{
+        NavigationView{
             TabView (selection: $selectedTab) {
                 Profile(debug: $debug, isMainViewUpdated: $isMainViewUpdated, profileHeader: $profileHeader, userIDtoGet: "0", imageURL: $imageURL, viewerShown: $viewerShown)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
@@ -43,6 +44,13 @@ struct MainScreen: View {
                     Text("Профиль")
                 }
                 .tag("profile")
+                
+                Feed()
+                    .tabItem {
+                        Image(systemName: "newspaper")
+                        Text("Лента")
+                    }
+                    .tag("feed")
                 
                 LoginSettings(debug: $debug, isMainViewUpdated: $isMainViewUpdated)
                     .tabItem {

@@ -13,7 +13,7 @@ struct About: View {
             HStack {
                 Text("OpenVK Swift")
                 Spacer()
-                Text((Bundle.main.infoDictionary?["CFBundleVersion"] as? String)!)
+                Text("\((Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String)!) (\((Bundle.main.infoDictionary?["CFBundleVersion"] as? String)!))")
                     .foregroundStyle(.secondary)
             }
             
@@ -41,6 +41,19 @@ struct About: View {
                 }
             } header: {
                 Text("Автор")
+            }
+            
+            Section {
+                Link(destination: URL(string: "https://veselcraft.ru")!) {
+                    HStack{
+                        Text("Veselcraft")
+                        Spacer()
+                        Text("veselcraft.ru")
+                            .foregroundStyle(.secondary)
+                    }
+                }
+            } header: {
+                Text("Разработчики")
             }
         }
         .navigationTitle("О приложении")
