@@ -304,7 +304,7 @@ struct Profile: View {
                         isMoreInfoPopupOpened = true
                     }
                     .frame(maxWidth: .infinity, alignment: .center)
-                }
+                }.modifier(FormElevateOnWhiteBackground())
                 
                 
                 Section {
@@ -348,7 +348,7 @@ struct Profile: View {
                             }
                         }
                     }
-                }
+                }.modifier(FormElevateOnWhiteBackground())
                 
                 
                 Section {
@@ -359,6 +359,7 @@ struct Profile: View {
                             imageURL: $imageURL,
                             viewerShown: $viewerShown
                         )
+                        .listRowInsets(EdgeInsets())
                     }
                     if !postsLoadingFinished && posts.count > 0 {
                         HStack(spacing: 10) {
@@ -376,6 +377,7 @@ struct Profile: View {
                         Text("Посты")
                     }
                 }
+                .listRowBackground(Color.clear)
                 .sheet(isPresented: $isMoreInfoPopupOpened, content: {
                     NavigationView {
                         UserInfoPopup(sex: $sex, music: $music, movies: $movies, tv: $tv, books: $books, city: $city, interests: $interests, quotes: $quotes, email: $email, telegram: $telegram, about: $about)
@@ -404,6 +406,7 @@ struct Profile: View {
                     .frame(maxWidth: .infinity, alignment: .center)
             }
         }
+        .modifier(FormHiddenBackground())
         .navigationTitle(name)
         .refreshable {
             refresh()

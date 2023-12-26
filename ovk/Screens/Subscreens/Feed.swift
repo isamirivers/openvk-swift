@@ -17,6 +17,7 @@ struct Feed: View {
     @Binding var viewerShown: Bool
     
     func loadData() {
+        UITableView.appearance().backgroundColor = .clear
         CallAPI(function: "Newsfeed.get", params: ["extended": "1"], completion: afterNewsFeedLoad)
     }
     
@@ -37,8 +38,12 @@ struct Feed: View {
                     imageURL: $imageURL,
                     viewerShown: $viewerShown
                 )
+                .listRowBackground(Color.clear)
+                .listRowInsets(EdgeInsets())
             }
-        }.onAppear(perform: loadData)
+        }
+        .modifier(FormHiddenBackground())
+        .onAppear(perform: loadData)
     }
 }
 

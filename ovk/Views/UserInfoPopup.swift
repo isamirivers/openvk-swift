@@ -61,7 +61,7 @@ struct UserInfoPopup: View {
                         }
                     }
                 }
-            }
+            }.modifier(FormElevateOnWhiteBackground())
             
             Section {
                 
@@ -128,7 +128,7 @@ struct UserInfoPopup: View {
                     }
                 }
                 
-            }
+            }.modifier(FormElevateOnWhiteBackground())
             
             Section {
                 VStack (alignment: .leading) {
@@ -137,7 +137,7 @@ struct UserInfoPopup: View {
                         .foregroundStyle(.secondary)
                     Text(sex_values[sex] ?? "Неизвестно")
                 }
-            }
+            }.modifier(FormElevateOnWhiteBackground())
             
         }
     }
