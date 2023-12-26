@@ -31,10 +31,6 @@ struct MainScreen: View {
             "debug": getLocalizedString(key: "Debug")
         ]
         
-        @State var inlineTabs = [
-            "profile"
-        ]
-        
         NavigationView{
             TabView (selection: $selectedTab) {
                 Profile(debug: $debug, isMainViewUpdated: $isMainViewUpdated, profileHeader: $profileHeader, userIDtoGet: "0", imageURL: $imageURL, viewerShown: $viewerShown)
@@ -64,7 +60,13 @@ struct MainScreen: View {
                 
             }
             .navigationTitle(tabNames[String(describing: selectedTab)] ?? "")
-            .navigationBarTitleDisplayMode(inlineTabs.contains(String(describing: selectedTab)) ? .inline : .automatic)
+            .safeAreaInset(edge: .top, content: {
+                Color.clear
+                    .frame(height:0)
+                    .background(.bar)
+                    .border(.black)
+            }) // https://mahfuzcse12.medium.com/transparent-background-problem-in-navigation-toolbar-while-scrolling-in-swiftui-711c58cd5fff
+            .navigationBarTitleDisplayMode(.inline)
         }
             // Костыль, чтобы обновлять экран ¯\_(ツ)_/¯ 👇🏼 (не осуждайте пж)
             .background(isViewUpdated ? Color.clear : Color.clear)
