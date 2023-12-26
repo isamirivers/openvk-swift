@@ -158,7 +158,7 @@ struct LoginView: View {
                             WebView(url: webViewURL)
                                 .navigationTitle("OpenVK")
                                 .navigationBarTitleDisplayMode(.inline)
-                        }
+                        }.navigationViewStyle(.stack)
                     })
                 }
             }
@@ -172,7 +172,7 @@ struct LoginView: View {
                 .toolbar {
                     NavigationLink (destination: LoginSettings(debug: $debug, isMainViewUpdated: $isMainViewUpdated)) {Image(systemName: "gearshape")}
                 }
-        }
+        }.navigationViewStyle(.stack)
     }
 }
 

@@ -33,7 +33,7 @@
 		2AA309B42AFE0C910074E038 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA309B32AFE0C910074E038 /* Post.swift */; };
 		2AECF5C62AE7D30800A463A3 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AECF5C52AE7D30800A463A3 /* Keychain.swift */; };
 		2AF9EB052AE9BC29009F0935 /* DateAndTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF9EB042AE9BC29009F0935 /* DateAndTime.swift */; };
-		2AF9EB072AE9DA8D009F0935 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF9EB062AE9DA8D009F0935 /* StringExtensions.swift */; };
+		2AF9EB072AE9DA8D009F0935 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF9EB062AE9DA8D009F0935 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,7 +62,7 @@
 		2AA309B32AFE0C910074E038 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		2AECF5C52AE7D30800A463A3 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		2AF9EB042AE9BC29009F0935 /* DateAndTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAndTime.swift; sourceTree = "<group>"; };
-		2AF9EB062AE9DA8D009F0935 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		2AF9EB062AE9DA8D009F0935 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +139,7 @@
 				2A28D6842AE959D400531DC9 /* Localization.swift */,
 				2A28D68A2AE968A100531DC9 /* API.swift */,
 				2AF9EB042AE9BC29009F0935 /* DateAndTime.swift */,
-				2AF9EB062AE9DA8D009F0935 /* StringExtensions.swift */,
+				2AF9EB062AE9DA8D009F0935 /* Extensions.swift */,
 				2A78FA882B3B0EA200F1E106 /* Structs.swift */,
 			);
 			path = Functions;
@@ -290,7 +290,7 @@
 				2AECF5C62AE7D30800A463A3 /* Keychain.swift in Sources */,
 				2A8983842AFA247A00408A8A /* FriendsList.swift in Sources */,
 				2A95C55F2AE8EAA90042F64C /* JSONErrors.swift in Sources */,
-				2AF9EB072AE9DA8D009F0935 /* StringExtensions.swift in Sources */,
+				2AF9EB072AE9DA8D009F0935 /* Extensions.swift in Sources */,
 				2AA309B42AFE0C910074E038 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,7 +443,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = "0.2.4-a";
+				MARKETING_VERSION = "0.2.5-a";
 				PRODUCT_BUNDLE_IDENTIFIER = isamiri.ru.ovk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -479,7 +479,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = "0.2.4-a";
+				MARKETING_VERSION = "0.2.5-a";
 				PRODUCT_BUNDLE_IDENTIFIER = isamiri.ru.ovk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

@@ -372,10 +372,6 @@ struct Profile: View {
                             CallAPI(function: "Wall.get", params: ["owner_id": userIDtoGet, "extended": "1", "count": "5", "offset": String(postsOffset)], completion: afterAdditionalPostsGetLoad)
                         }
                     }
-                } header: {
-                    if (posts.count > 0) {
-                        Text("Посты")
-                    }
                 }
                 .listRowBackground(Color.clear)
                 .sheet(isPresented: $isMoreInfoPopupOpened, content: {
@@ -384,6 +380,7 @@ struct Profile: View {
                             .navigationTitle("Информация")
                             .navigationBarTitleDisplayMode(.inline)
                     }
+                    .navigationViewStyle(.stack)
                 })
             }
             else {
