@@ -45,10 +45,10 @@ struct MainScreen: View {
                 }
                 .tag("profile")
                 
-                Feed()
+                Feed(imageURL: $imageURL, viewerShown: $viewerShown)
                     .tabItem {
                         Image(systemName: "newspaper")
-                        Text("Лента")
+                        Text("Feed")
                     }
                     .tag("feed")
                 

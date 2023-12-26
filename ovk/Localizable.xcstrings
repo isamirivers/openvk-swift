@@ -99,6 +99,17 @@
     "E-mail" : {
 
     },
+    "Feed" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Лента"
+          }
+        }
+      }
+    },
     "from" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -182,9 +193,6 @@
           }
         }
       }
-    },
-    "Hello, World!" : {
-
     },
     "hour" : {
       "extractionState" : "manual",
@@ -713,9 +721,6 @@
           }
         }
       }
-    },
-    "Лента" : {
-
     },
     "Логин" : {
       "localizations" : {
