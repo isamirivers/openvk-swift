@@ -1,4 +1,4 @@
-<img src="https://github.com/isamirivers/openvk-swift/assets/53663257/6d0a2c3b-80cc-4fac-9161-f39276a8eb03" height="40">
+<img src="https://github.com/isamirivers/openvk-swift/assets/53663257/82aceb3d-cc10-40d6-9ba4-f271da2e99a3" height="54">
 <br><br>
 Клиент OpenVK для устройств под управлением iOS 15+, iPadOS 15+, а так же Mac с процессорами Apple Silicon.
 <br><br>
