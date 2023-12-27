@@ -7,6 +7,16 @@
     "%@" : {
 
     },
+    "%@ (%@)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ (%2$@)"
+          }
+        }
+      }
+    },
     "%@ %@" : {
       "localizations" : {
         "en" : {
@@ -88,6 +98,17 @@
     },
     "E-mail" : {
 
+    },
+    "Feed" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Лента"
+          }
+        }
+      }
     },
     "from" : {
       "extractionState" : "manual",
@@ -427,6 +448,12 @@
           }
         }
       }
+    },
+    "Veselcraft" : {
+
+    },
+    "veselcraft.ru" : {
+
     },
     "Was" : {
       "extractionState" : "manual",
@@ -943,6 +970,7 @@
       }
     },
     "Посты" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1007,6 +1035,9 @@
           }
         }
       }
+    },
+    "Разработчики" : {
+
     },
     "Режим разработчика" : {
       "localizations" : {

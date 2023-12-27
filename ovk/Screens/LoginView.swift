@@ -38,7 +38,7 @@ struct LoginView: View {
     
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             Form {
                 
                 if debug {
@@ -154,11 +154,11 @@ struct LoginView: View {
                         isWebViewOpened = true
                     }
                     .sheet(isPresented: $isWebViewOpened, content: {
-                        NavigationStack {
+                        NavigationView {
                             WebView(url: webViewURL)
                                 .navigationTitle("OpenVK")
                                 .navigationBarTitleDisplayMode(.inline)
-                        }
+                        }.navigationViewStyle(.stack)
                     })
                 }
             }
@@ -172,7 +172,7 @@ struct LoginView: View {
                 .toolbar {
                     NavigationLink (destination: LoginSettings(debug: $debug, isMainViewUpdated: $isMainViewUpdated)) {Image(systemName: "gearshape")}
                 }
-        }
+        }.navigationViewStyle(.stack)
     }
 }
 

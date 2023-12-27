@@ -22,6 +22,7 @@ struct LoginSettings: View {
                     Text("О приложении")
                 }
             }
+            .modifier(FormElevateOnWhiteBackground())
             
             
             Section {
@@ -35,6 +36,7 @@ struct LoginSettings: View {
             } header: {
                 Text("UserDefaults")
             }
+            .modifier(FormElevateOnWhiteBackground())
             
             
             Section {
@@ -46,7 +48,9 @@ struct LoginSettings: View {
                 .foregroundStyle(.red)
                 .frame(maxWidth: .infinity, alignment: .center)
             }
+            .modifier(FormElevateOnWhiteBackground())
         }
+        .modifier(FormHiddenBackground())
         .navigationTitle("Настройки")
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension String {
     var capitalizedSentence: String {
@@ -16,4 +17,20 @@ extension String {
         // 3
         return firstLetter + remainingLetters
     }
+}
+
+extension UIDevice {
+  static var idiom: UIUserInterfaceIdiom {
+    UIDevice.current.userInterfaceIdiom
+  }
+}
+
+extension UIDevice {
+static var isIpad: Bool {
+    idiom == .pad
+  }
+  
+  static var isiPhone: Bool {
+    idiom == .phone
+  }
 }

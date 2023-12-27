@@ -304,7 +304,7 @@ struct Profile: View {
                         isMoreInfoPopupOpened = true
                     }
                     .frame(maxWidth: .infinity, alignment: .center)
-                }
+                }.modifier(FormElevateOnWhiteBackground())
                 
                 
                 Section {
@@ -348,7 +348,7 @@ struct Profile: View {
                             }
                         }
                     }
-                }
+                }.modifier(FormElevateOnWhiteBackground())
                 
                 
                 Section {
@@ -359,6 +359,7 @@ struct Profile: View {
                             imageURL: $imageURL,
                             viewerShown: $viewerShown
                         )
+                        .listRowInsets(EdgeInsets())
                     }
                     if !postsLoadingFinished && posts.count > 0 {
                         HStack(spacing: 10) {
@@ -371,17 +372,15 @@ struct Profile: View {
                             CallAPI(function: "Wall.get", params: ["owner_id": userIDtoGet, "extended": "1", "count": "5", "offset": String(postsOffset)], completion: afterAdditionalPostsGetLoad)
                         }
                     }
-                } header: {
-                    if (posts.count > 0) {
-                        Text("Посты")
-                    }
                 }
+                .listRowBackground(Color.clear)
                 .sheet(isPresented: $isMoreInfoPopupOpened, content: {
-                    NavigationStack {
+                    NavigationView {
                         UserInfoPopup(sex: $sex, music: $music, movies: $movies, tv: $tv, books: $books, city: $city, interests: $interests, quotes: $quotes, email: $email, telegram: $telegram, about: $about)
                             .navigationTitle("Информация")
                             .navigationBarTitleDisplayMode(.inline)
                     }
+                    .navigationViewStyle(.stack)
                 })
             }
             else {
@@ -404,6 +403,7 @@ struct Profile: View {
                     .frame(maxWidth: .infinity, alignment: .center)
             }
         }
+        .modifier(FormHiddenBackground())
         .navigationTitle(name)
         .refreshable {
             refresh()

@@ -20,6 +20,8 @@
 		2A6FE3372AE7A32100F1D694 /* LogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FE3362AE7A32100F1D694 /* LogIn.swift */; };
 		2A6FE33A2AE7B47D00F1D694 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FE3392AE7B47D00F1D694 /* WebView.swift */; };
 		2A6FE33C2AE7BA4700F1D694 /* JSONthings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6FE33B2AE7BA4700F1D694 /* JSONthings.swift */; };
+		2A78FA892B3B0EA200F1E106 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A78FA882B3B0EA200F1E106 /* Structs.swift */; };
+		2A8139F72B19DB9100BB471C /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8139F62B19DB9100BB471C /* Feed.swift */; };
 		2A8983842AFA247A00408A8A /* FriendsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8983832AFA247A00408A8A /* FriendsList.swift */; };
 		2A90D2AA2B096E4C0085DE73 /* ImageViewer in Frameworks */ = {isa = PBXBuildFile; productRef = 2A90D2A92B096E4C0085DE73 /* ImageViewer */; };
 		2A90D2AC2B096E4C0085DE73 /* ImageViewerRemote in Frameworks */ = {isa = PBXBuildFile; productRef = 2A90D2AB2B096E4C0085DE73 /* ImageViewerRemote */; };
@@ -31,7 +33,7 @@
 		2AA309B42AFE0C910074E038 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA309B32AFE0C910074E038 /* Post.swift */; };
 		2AECF5C62AE7D30800A463A3 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AECF5C52AE7D30800A463A3 /* Keychain.swift */; };
 		2AF9EB052AE9BC29009F0935 /* DateAndTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF9EB042AE9BC29009F0935 /* DateAndTime.swift */; };
-		2AF9EB072AE9DA8D009F0935 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF9EB062AE9DA8D009F0935 /* StringExtensions.swift */; };
+		2AF9EB072AE9DA8D009F0935 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF9EB062AE9DA8D009F0935 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		2A6FE3362AE7A32100F1D694 /* LogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIn.swift; sourceTree = "<group>"; };
 		2A6FE3392AE7B47D00F1D694 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		2A6FE33B2AE7BA4700F1D694 /* JSONthings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONthings.swift; sourceTree = "<group>"; };
+		2A78FA882B3B0EA200F1E106 /* Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
+		2A8139F62B19DB9100BB471C /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		2A8983832AFA247A00408A8A /* FriendsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsList.swift; sourceTree = "<group>"; };
 		2A95C55E2AE8EAA90042F64C /* JSONErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONErrors.swift; sourceTree = "<group>"; };
 		2A95C5632AE8F24F0042F64C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -58,7 +62,7 @@
 		2AA309B32AFE0C910074E038 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		2AECF5C52AE7D30800A463A3 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		2AF9EB042AE9BC29009F0935 /* DateAndTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAndTime.swift; sourceTree = "<group>"; };
-		2AF9EB062AE9DA8D009F0935 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		2AF9EB062AE9DA8D009F0935 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,7 @@
 				2AA309B22AFE0C840074E038 /* Components */,
 				2A8983822AFA246D00408A8A /* SubSubScreens */,
 				2A28D6882AE965B400531DC9 /* Profile.swift */,
+				2A8139F62B19DB9100BB471C /* Feed.swift */,
 			);
 			path = Subscreens;
 			sourceTree = "<group>";
@@ -134,7 +139,8 @@
 				2A28D6842AE959D400531DC9 /* Localization.swift */,
 				2A28D68A2AE968A100531DC9 /* API.swift */,
 				2AF9EB042AE9BC29009F0935 /* DateAndTime.swift */,
-				2AF9EB062AE9DA8D009F0935 /* StringExtensions.swift */,
+				2AF9EB062AE9DA8D009F0935 /* Extensions.swift */,
+				2A78FA882B3B0EA200F1E106 /* Structs.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -216,7 +222,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1510;
 				TargetAttributes = {
 					2A18C9572AE6BFE6005A3F7C = {
 						CreatedOnToolsVersion = 15.0.1;
@@ -274,15 +280,17 @@
 				2A95C5662AE8F6310042F64C /* MainScreen.swift in Sources */,
 				2A28D6852AE959D400531DC9 /* Localization.swift in Sources */,
 				2A95C5642AE8F24F0042F64C /* MainView.swift in Sources */,
+				2A8139F72B19DB9100BB471C /* Feed.swift in Sources */,
 				2A6FE33A2AE7B47D00F1D694 /* WebView.swift in Sources */,
 				2A6FE3372AE7A32100F1D694 /* LogIn.swift in Sources */,
 				2A28D6832AE92A7800531DC9 /* UserDefaults.swift in Sources */,
+				2A78FA892B3B0EA200F1E106 /* Structs.swift in Sources */,
 				2AF9EB052AE9BC29009F0935 /* DateAndTime.swift in Sources */,
 				2A18C95C2AE6BFE6005A3F7C /* ovkApp.swift in Sources */,
 				2AECF5C62AE7D30800A463A3 /* Keychain.swift in Sources */,
 				2A8983842AFA247A00408A8A /* FriendsList.swift in Sources */,
 				2A95C55F2AE8EAA90042F64C /* JSONErrors.swift in Sources */,
-				2AF9EB072AE9DA8D009F0935 /* StringExtensions.swift in Sources */,
+				2AF9EB072AE9DA8D009F0935 /* Extensions.swift in Sources */,
 				2AA309B42AFE0C910074E038 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,6 +303,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -358,6 +367,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -416,7 +426,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "0.2.0-alpha";
+				CURRENT_PROJECT_VERSION = 26.12.23;
 				DEVELOPMENT_ASSET_PATHS = "\"ovk/Preview Content\"";
 				DEVELOPMENT_TEAM = 38AATL5X53;
 				ENABLE_PREVIEWS = YES;
@@ -428,12 +438,12 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = "0.2.0-alpha";
+				MARKETING_VERSION = "0.2.5-a";
 				PRODUCT_BUNDLE_IDENTIFIER = isamiri.ru.ovk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -452,7 +462,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "0.2.0-alpha";
+				CURRENT_PROJECT_VERSION = 26.12.23;
 				DEVELOPMENT_ASSET_PATHS = "\"ovk/Preview Content\"";
 				DEVELOPMENT_TEAM = 38AATL5X53;
 				ENABLE_PREVIEWS = YES;
@@ -464,12 +474,12 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = "0.2.0-alpha";
+				MARKETING_VERSION = "0.2.5-a";
 				PRODUCT_BUNDLE_IDENTIFIER = isamiri.ru.ovk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
